@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 10, 2020 at 09:21 PM
+-- Generation Time: Mar 10, 2020 at 10:18 PM
 -- Server version: 10.1.44-MariaDB-0ubuntu0.18.04.1
 -- PHP Version: 7.4.3
 
@@ -1536,7 +1536,8 @@ INSERT INTO `tbl_numbers` (`RNUM`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VALUES
 --
 
 CREATE TABLE `tbl_parts` (
-  `PID` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `PID` int(11) NOT NULL,
+  `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 DEFAULT NULL COMMENT 'Should be Armenian letters',
   `ARMENIAN` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `ENGLISH` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `SOURCE` varchar(4) COLLATE latin1_general_ci DEFAULT NULL
@@ -1546,79 +1547,79 @@ CREATE TABLE `tbl_parts` (
 -- Dumping data for table `tbl_parts`
 --
 
-INSERT INTO `tbl_parts` (`PID`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VALUES
-(1, 'vorovAtiv', 'because', NULL),
-(0, 'sah*', 'all', 'inf'),
-(1, 'hAto', 'then / later', NULL),
-(1, 'oo', 'and', NULL),
-(1, 'yAv', 'and', NULL),
-(1, 'eesk', 'and / but', NULL),
-(1, 'baits', 'but', NULL),
-(1, 'kam', 'or', NULL),
-(1, 'tay', 'or', NULL),
-(1, 'nooeen eesk', 'even (the same but..)', NULL),
-(1, 'nooeena', 'same', NULL),
-(1, 'darbAr', 'different', NULL),
-(1, 'meeain', 'only', NULL),
-(1, 'ais pees ov', 'so', NULL),
-(1, 'goodsA', 'perhaps (questions)', NULL),
-(1, 'yArivee', 'perhaps (statements)', NULL),
-(1, 'yAtA', 'if (conditional)', NULL),
-(1, 'tA', 'if (whether)', NULL),
-(1, 'cheestA', '(thats) correct.', NULL),
-(1, 'cheestAs', 'You are correct.', NULL),
-(1, 'maseen', 'about', NULL),
-(1, 'arten', 'already', NULL),
-(1, 'noo eem pAs', 'also', NULL),
-(1, 'el', 'also', NULL),
-(1, 'hamAl', 'also (and)', NULL),
-(1, 'kani vor', 'since / as', NULL),
-(1, 'hAt', 'with', NULL),
-(1, 'eescapAs', 'really?', NULL),
-(1, 'hamozvatses', 'are you sure?', NULL),
-(1, 'Alee', 'again', NULL),
-(1, 'noreets', 'again', NULL),
-(1, 'kirkeen', 'again (formal)', NULL),
-(1, 'avAlee', 'more', NULL),
-(1, 'ooreesh', 'another', NULL),
-(1, 'bolor', 'all', NULL),
-(1, 'mee kanee', 'several (some)', NULL),
-(1, 'yArpAk', 'never', NULL),
-(1, 'voatch me ban', 'nothing', NULL),
-(1, 'hAtch', 'nothing (slang)', NULL),
-(1, 'yArkoosnAl', 'both', NULL),
-(0, 'haam', 'taste (food)', NULL),
-(1, 'nah* yav aRach', 'first (before and before)', NULL),
-(1, 'ais', 'this', NULL),
-(1, 'voatch shat', 'not many', NULL),
-(1, 'meenchAv', 'until / up to', NULL),
-(1, 'vor*tch', 'all', 'for'),
-(1, 'ambor*tch', 'all', 'for'),
-(1, 'hangarts', 'suddenly', NULL),
-(1, 'moat', 'near', NULL),
-(1, 'g~kor*keen', 'near / next to / beside', NULL),
-(1, 'dAb~pee', 'towards - direction', NULL),
-(1, 'vorAvA mAkih', 'some one', NULL),
-(1, 'nirs', 'in (side)', NULL),
-(1, 'doors', 'out (side)', NULL),
-(1, 'nirsoom', 'inside', NULL),
-(1, 'dirsoom', 'outside', NULL),
-(1, 'tsavog~k', 'unfortunately', NULL),
-(1, 'hAreekA', 'enough (e.g. stop filling a glas', 'inf'),
-(0, '(meea)naman', 'similar', NULL),
-(0, 'yAtA', '_IF_ he comes, I will see him.', NULL),
-(0, 'tA or ardiok', 'I don\'t know _IF_ he will come o', NULL),
-(0, 'nai Av', 'also', NULL),
-(0, 'heema', 'now', NULL),
-(0, 'aijzim', 'now', 'for'),
-(0, '(baits) mAg~ka', 'however', 'sl'),
-(0, 'ainoo-amen-aineev', 'however', 'form'),
-(0, 'baits yAv ain pAs', 'however', NULL),
-(0, 'lereev', 'all', 'inf'),
-(0, 'shoot kAr', 'eat quickly (early)', NULL),
-(0, 'shoot ara', 'do it quickly', NULL),
-(0, 'aint~der*??', 'there', NULL),
-(0, 'aist~der*??', 'here', NULL);
+INSERT INTO `tbl_parts` (`PID`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VALUES
+(1, 'որովհետեւ', 'vorovAtiv', 'because', NULL),
+(2, NULL, 'sah*', 'all', 'inf'),
+(3, 'հետո', 'hAto', 'then (>later)', NULL),
+(4, NULL, 'oo', 'and', NULL),
+(5, 'li', 'yAv', 'and', NULL),
+(6, 'իսկ\n	\n', 'eesk', 'and / but', NULL),
+(7, 'բայց', 'baits', 'but', NULL),
+(8, 'կամ', 'kam', 'or', NULL),
+(9, NULL, 'tay', 'or', NULL),
+(10, NULL, 'nooeen eesk', 'even (the same but..)', NULL),
+(11, NULL, 'nooeena', 'same', NULL),
+(12, NULL, 'darbAr', 'different', NULL),
+(13, NULL, 'meeain', 'only', NULL),
+(14, NULL, 'ais pees ov', 'so', NULL),
+(15, NULL, 'goodsA', 'perhaps (questions)', NULL),
+(16, NULL, 'yArivee', 'perhaps (statements)', NULL),
+(17, NULL, 'yAtA', 'if (conditional)', NULL),
+(18, NULL, 'tA', 'if (whether)', NULL),
+(19, NULL, 'cheestA', '(thats) correct.', NULL),
+(20, NULL, 'cheestAs', 'You are correct.', NULL),
+(21, NULL, 'maseen', 'about', NULL),
+(22, NULL, 'arten', 'already', NULL),
+(23, NULL, 'noo eem pAs', 'also', NULL),
+(24, NULL, 'el', 'also', NULL),
+(25, NULL, 'hamAl', 'also (and)', NULL),
+(26, NULL, 'kani vor', 'since / as', NULL),
+(27, NULL, 'hAt', 'with', NULL),
+(28, NULL, 'eescapAs', 'really?', NULL),
+(29, NULL, 'hamozvatses', 'are you sure?', NULL),
+(30, NULL, 'Alee', 'again', NULL),
+(31, 'նորից', 'noreets', 'again', NULL),
+(32, 'կրկին', 'kirkeen', 'again (formal)', NULL),
+(33, 'ավելի', 'avAlee', 'more', NULL),
+(34, 'ուրիշ', 'ooreesh', 'another', NULL),
+(35, 'բոլոր', 'bolor', 'all', NULL),
+(36, 'մի քանի', 'mee kanee', 'several (some/few)', NULL),
+(37, 'երբեք', 'yArbAk', 'never', NULL),
+(38, NULL, 'voatch me ban', 'nothing', NULL),
+(39, NULL, 'hAtch', 'nothing (slang)', NULL),
+(40, NULL, 'yArkoosnAl', 'both', NULL),
+(41, NULL, 'haam', 'taste (food)', NULL),
+(42, NULL, 'nah* yav aRach', 'first (before and before)', NULL),
+(43, NULL, 'ais', 'this', NULL),
+(44, NULL, 'voatch shat', 'not many', NULL),
+(45, NULL, 'meenchAv', 'until / up to', NULL),
+(46, NULL, 'vor*tch', 'all', 'for'),
+(47, NULL, 'ambor*tch', 'all', 'for'),
+(48, NULL, 'hangarts', 'suddenly', NULL),
+(49, NULL, 'moat', 'near', NULL),
+(50, NULL, 'g~kor*keen', 'near / next to / beside', NULL),
+(51, NULL, 'dAb~pee', 'towards - direction', NULL),
+(52, NULL, 'vorAvA mAkih', 'some one', NULL),
+(53, NULL, 'nirs', 'in (side)', NULL),
+(54, NULL, 'doors', 'out (side)', NULL),
+(55, NULL, 'nirsoom', 'inside', NULL),
+(56, NULL, 'dirsoom', 'outside', NULL),
+(57, NULL, 'tsavog~k', 'unfortunately', NULL),
+(58, NULL, 'hAreekA', 'enough (e.g. stop filling a glas', 'inf'),
+(59, NULL, '(meea)naman', 'similar', NULL),
+(60, NULL, 'yAtA', '_IF_ he comes, I will see him.', NULL),
+(61, NULL, 'tA or ardiok', 'I don\'t know _IF_ he will come o', NULL),
+(62, NULL, 'nai Av', 'also', NULL),
+(63, NULL, 'heema', 'now', NULL),
+(64, NULL, 'aijzim', 'now', 'for'),
+(65, NULL, '(baits) mAg~ka', 'however', 'sl'),
+(66, NULL, 'ainoo-amen-aineev', 'however', 'form'),
+(67, NULL, 'baits yAv ain pAs', 'however', NULL),
+(68, NULL, 'lereev', 'all', 'inf'),
+(69, NULL, 'shoot kAr', 'eat quickly (early)', NULL),
+(70, NULL, 'shoot ara', 'do it quickly', NULL),
+(71, NULL, 'aint~der*??', 'there', NULL),
+(72, NULL, 'aist~der*??', 'here', NULL);
 
 -- --------------------------------------------------------
 
@@ -3386,6 +3387,12 @@ ALTER TABLE `tbl_nouns`
   ADD PRIMARY KEY (`NID`);
 
 --
+-- Indexes for table `tbl_parts`
+--
+ALTER TABLE `tbl_parts`
+  ADD PRIMARY KEY (`PID`);
+
+--
 -- Indexes for table `tbl_phrases`
 --
 ALTER TABLE `tbl_phrases`
@@ -3422,6 +3429,11 @@ ALTER TABLE `tbl_adj_groups`
 --
 ALTER TABLE `tbl_nouns`
   MODIFY `NID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1107;
+--
+-- AUTO_INCREMENT for table `tbl_parts`
+--
+ALTER TABLE `tbl_parts`
+  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 --
 -- AUTO_INCREMENT for table `tbl_phrases`
 --
