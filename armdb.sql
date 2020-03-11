@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 11, 2020 at 07:57 AM
+-- Generation Time: Mar 11, 2020 at 01:41 PM
 -- Server version: 10.1.44-MariaDB-0ubuntu0.18.04.1
 -- PHP Version: 7.4.3
 
@@ -1552,7 +1552,7 @@ INSERT INTO `tbl_parts` (`PID`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VA
 (2, '??', 'sah*', 'all', 'inf'),
 (3, 'հետո', 'hAto', 'then (>later)', NULL),
 (4, '??', 'oo', 'and', NULL),
-(5, 'li', 'yAv', 'and', NULL),
+(5, '[Av]', 'yAv', 'and', NULL),
 (6, 'իսկ\n	\n', 'eesk', 'and / but', NULL),
 (7, 'բայց', 'baits', 'but', NULL),
 (8, 'կամ', 'kam', 'or', NULL),
@@ -1562,7 +1562,7 @@ INSERT INTO `tbl_parts` (`PID`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VA
 (12, 'տարբեր', 'darbAr', 'different', NULL),
 (13, 'միայն', 'meeain', 'only', NULL),
 (14, 'այսպես', 'ais pAs (ov)', 'so', NULL),
-(15, 'գուցե', 'goodsA', 'perhaps (questions)', NULL),
+(15, 'գուցե', 'gootsA', 'perhaps (questions)', NULL),
 (16, '??', 'yArivee', 'perhaps (statements)', NULL),
 (17, 'եթե', 'yAtA', 'if (conditional)', NULL),
 (18, 'թե', 'tA', 'if (whether)', NULL),
@@ -1570,12 +1570,12 @@ INSERT INTO `tbl_parts` (`PID`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VA
 (20, '(Դուք) ճիշտ եք', 'cheestAs', 'You are correct.', NULL),
 (21, 'մասին', 'maseen', 'about', NULL),
 (22, 'արդեն', 'arten', 'already', NULL),
-(23, 'նույնպես', 'noo eem pAs', 'also', NULL),
+(23, 'նույնպես', 'nooeen pAs', 'also', NULL),
 (24, 'էլ', 'el', 'also (too)', NULL),
 (25, '??', 'hamAl', 'also (and)', NULL),
 (26, 'քանի որ', 'kani vor', 'since / as', NULL),
 (27, 'հետ', 'hAt', 'with', NULL),
-(28, '??', 'eescapAs', 'really?', NULL),
+(28, 'իսկապես', 'eesk apAs', '(and) really?', NULL),
 (29, 'համոզված ես?', 'hamozvatses', 'are you sure?', NULL),
 (30, '??', 'Alee', 'again', NULL),
 (31, 'նորից', 'noreets', 'again', NULL),
@@ -1592,34 +1592,36 @@ INSERT INTO `tbl_parts` (`PID`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VA
 (42, 'նախ / առաջին', 'nah* yav aRach', 'first (before and before)', NULL),
 (43, 'այս', 'ais', 'this', NULL),
 (44, 'ոչ շատ', 'voatch shat', 'not many', NULL),
-(45, NULL, 'meenchAv', 'until / up to', NULL),
+(45, 'մինչ[Av]', 'meenchAv', 'until / up to', NULL),
 (46, NULL, 'vor*tch', 'all', 'for'),
-(47, NULL, 'ambor*tch', 'all', 'for'),
-(48, NULL, 'hangarts', 'suddenly', NULL),
-(49, NULL, 'moat', 'near', NULL),
-(50, NULL, 'g~kor*keen', 'near / next to / beside', NULL),
-(51, NULL, 'dAb~pee', 'towards - direction', NULL),
-(52, NULL, 'vorAvA mAkih', 'some one', NULL),
-(53, NULL, 'nirs', 'in (side)', NULL),
-(54, NULL, 'doors', 'out (side)', NULL),
+(47, 'ամբողջ', 'ambor*tch', 'all (whole)', 'for'),
+(48, 'հանկարծ', 'hangarts', 'suddenly', NULL),
+(49, 'մոտ', 'moat', 'near', NULL),
+(50, 'կողքին', 'g~kor*keen', 'near / next to / beside', NULL),
+(51, 'դեպի', 'dAb~pee', 'towards - direction', NULL),
+(52, 'որ[Av]է մեկը', 'vorAvA mAkih', 'some one', NULL),
+(53, 'ներս', 'nirs', 'in (side)', NULL),
+(54, 'դուրս', 'doors', 'out (side)', NULL),
 (55, NULL, 'nirsoom', 'inside', NULL),
 (56, NULL, 'dirsoom', 'outside', NULL),
-(57, NULL, 'tsavog~k', 'unfortunately', NULL),
-(58, NULL, 'hAreekA', 'enough (e.g. stop filling a glas', 'inf'),
-(59, NULL, '(meea)naman', 'similar', NULL),
+(57, 'ցավոք', 'tsavog~k', 'unfortunately', NULL),
+(58, '??', 'hAreekA', 'enough (e.g. stop filling a glas', 'inf'),
+(59, 'նման', '(meea)naman', 'similar', NULL),
 (60, NULL, 'yAtA', '_IF_ he comes, I will see him.', NULL),
-(61, NULL, 'tA or ardiok', 'I don\'t know _IF_ he will come o', NULL),
-(62, NULL, 'nai Av', 'also', NULL),
-(63, NULL, 'heema', 'now', NULL),
-(64, NULL, 'aijzim', 'now', 'for'),
+(61, 'արդյոք', 'tA or ardiok', 'I don\'t know _IF_ he will come o', NULL),
+(62, 'նա[Av]', 'nai Av', 'also', NULL),
+(63, 'հիմա', 'heema', 'now', NULL),
+(64, 'այժմ', 'aijzim', 'now', 'for'),
 (65, NULL, '(baits) mAg~ka', 'however', 'sl'),
-(66, NULL, 'ainoo-amen-aineev', 'however', 'form'),
+(66, 'այնուամենայնիվ', 'ainoo-amen-aineev', 'however /nevertheless', 'form'),
 (67, NULL, 'baits yAv ain pAs', 'however', NULL),
-(68, NULL, 'lereev', 'all', 'inf'),
+(68, 'լրիվ', 'lereev', 'all', 'inf'),
 (69, NULL, 'shoot kAr', 'eat quickly (early)', NULL),
 (70, NULL, 'shoot ara', 'do it quickly', NULL),
 (71, NULL, 'aint~der*??', 'there', NULL),
-(72, NULL, 'aist~der*??', 'here', NULL);
+(72, NULL, 'aist~der*??', 'here', NULL),
+(73, 'բավական', 'bavakan', 'enough', NULL),
+(74, 'սակայն', 'sakayn', 'however', 'goog');
 
 -- --------------------------------------------------------
 
@@ -2768,7 +2770,7 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1123, 0, 1, NULL, 'oom moatA minaloo?', 'Who\'s staying with him.', NULL),
 (1124, 0, 1, NULL, 'tateekee.', 'His grand-mother. (granny)', NULL),
 (1125, 0, 1, NULL, 'doo g~k\'karotAs niran?', 'You will miss him?', NULL),
-(1126, 0, 1, NULL, 'eeharkA.', 'Sure.', NULL),
+(1126, 0, 1, 'իհարկե', 'eeharkA.', 'Sure / naturally.', NULL),
 (1127, 0, 1, NULL, 'ainder* ooreesh yarih*anAr g~k\'leenAn?', 'Will there be other children.', NULL),
 (1128, 0, 1, NULL, 'ayo.', 'Yes.', NULL),
 (1129, 0, 1, NULL, 'kanee yarih*a/hoakee?', 'How many children?', NULL),
@@ -2880,7 +2882,9 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1235, 0, 0, 'իմ հասցեն ABC փողոց է:', 'eem hastsAn ABC poh*ots A', 'My address is ABC Street.', 'andr'),
 (1236, 0, 0, 'Ես ուզում եմ կրկես գնալ:', 'oozoom em ginal kirkAsee ee mote', 'I want to go to the circus.', 'andr'),
 (1237, 0, 0, 'ingAr jan, Ես ուզում եմ գնալ HSBC հրապարակ??', 'eengAr jan, hraparakee HSBC bankn em oozoom gnal.', 'I want to got to the square with HSBC (informal polite)', 'andr'),
-(1238, 0, 0, 'ինչքան կտ?ի', 'eench kan ktevy?', 'how long will it take?', 'andr');
+(1238, 0, 0, 'ինչքան կտ?ի', 'eench kan ktevy?', 'how long will it take?', 'andr'),
+(1239, 0, 0, 'կարող եք վերցնել երկուսն էլ', '', 'you can take both of them', 'goog'),
+(1240, 0, 0, 'ավելի կան', 'avAlee kan', 'there are more', 'goog');
 
 -- --------------------------------------------------------
 
@@ -3433,12 +3437,12 @@ ALTER TABLE `tbl_nouns`
 -- AUTO_INCREMENT for table `tbl_parts`
 --
 ALTER TABLE `tbl_parts`
-  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 --
 -- AUTO_INCREMENT for table `tbl_phrases`
 --
 ALTER TABLE `tbl_phrases`
-  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1239;
+  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1241;
 --
 -- AUTO_INCREMENT for table `tbl_verbs`
 --
