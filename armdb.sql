@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 11, 2020 at 09:46 PM
+-- Generation Time: Mar 13, 2020 at 08:19 AM
 -- Server version: 10.1.44-MariaDB-0ubuntu0.18.04.1
 -- PHP Version: 7.4.3
 
@@ -2884,7 +2884,13 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1237, 0, 0, 'ingAr jan, Ես ուզում եմ գնալ HSBC հրապարակ??', 'eengAr jan, hraparakee HSBC bankn em oozoom gnal.', 'I want to got to the square with HSBC (informal polite)', 'andr'),
 (1238, 0, 0, 'ինչքան կտԵՒի', 'eench kan ktevy?', 'how long will it take?', 'andr'),
 (1239, 0, 0, 'կարող եք վերցնել երկուսն էլ', '', 'you can take both of them', 'goog'),
-(1240, 0, 0, 'ավելի կան', 'avAlee kan', 'there are more', 'goog');
+(1240, 0, 0, 'ավելի կան', 'avAlee kan', 'there are more', 'goog'),
+(1241, 0, 0, 'բավարար գումար', '', 'enough money', 'goth'),
+(1242, 0, 0, 'երբ մենք ունենք բավարար', '', 'when we have enough', 'goth'),
+(1243, 0, 0, 'երբ մենք բավականաչափ փող ունենք', '', 'when we have enough money', 'goth'),
+(1244, 0, 0, 'քանակությամբ', '', 'in quantity', 'goth'),
+(1245, 0, 0, 'երբ մենք ունենք բավարար քանակությամբ փող', 'bavakan', 'when we have enough money', 'goth'),
+(1246, 0, 0, 'ես բավականաչափ փորձ ունեմ', 'bavakan', 'I have enough experience', 'goth');
 
 -- --------------------------------------------------------
 
@@ -3442,7 +3448,7 @@ ALTER TABLE `tbl_parts`
 -- AUTO_INCREMENT for table `tbl_phrases`
 --
 ALTER TABLE `tbl_phrases`
-  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1241;
+  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1247;
 --
 -- AUTO_INCREMENT for table `tbl_verbs`
 --
