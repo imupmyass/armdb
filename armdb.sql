@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Mar 14, 2020 at 03:45 PM
+-- Generation Time: Mar 14, 2020 at 04:05 PM
 -- Server version: 8.0.19
 -- PHP Version: 7.4.1
 
@@ -2892,7 +2892,10 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1243, 0, 0, 'երբ մենք բավականաչափ փող ունենք', '', 'when we have enough money', 'goth'),
 (1244, 0, 0, 'քանակությամբ', '', 'in quantity', 'goth'),
 (1245, 0, 0, 'երբ մենք ունենք բավարար քանակությամբ փող', 'bavakan', 'when we have enough money', 'goth'),
-(1246, 0, 0, 'ես բավականաչափ փորձ ունեմ', 'bavakan', 'I have enough experience', 'goth');
+(1246, 0, 0, 'ես բավականաչափ փորձ ունեմ', 'bavakan', 'I have enough experience', 'goth'),
+(1247, 0, 0, 'Հայոց բանակը', 'Haiyots banakee', 'Armenian Army', 'goth'),
+(1248, 0, 0, 'ռուսական բանակը', 'Roosakan banakee', 'The Russian army', 'goth'),
+(1249, 0, 0, 'Ուժեղ բանակ', 'oozhegh banak', 'A strong army.', 'goth');
 
 -- --------------------------------------------------------
 
@@ -3454,7 +3457,7 @@ ALTER TABLE `tbl_parts`
 -- AUTO_INCREMENT for table `tbl_phrases`
 --
 ALTER TABLE `tbl_phrases`
-  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1247;
+  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1250;
 
 --
 -- AUTO_INCREMENT for table `tbl_verbs`
