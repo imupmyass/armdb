@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Mar 13, 2020 at 08:19 AM
--- Server version: 10.1.44-MariaDB-0ubuntu0.18.04.1
--- PHP Version: 7.4.3
+-- Host: mysql:3306
+-- Generation Time: Mar 14, 2020 at 03:45 PM
+-- Server version: 8.0.19
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -27,12 +29,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tbl_adjectives` (
-  `AID` int(11) NOT NULL,
-  `AGRP` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 DEFAULT NULL COMMENT 'Should be Armenian letters',
-  `ARMENIAN` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `ENGLISH` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SOURCE` char(3) COLLATE latin1_general_ci DEFAULT NULL
+  `AID` int NOT NULL,
+  `AGRP` int UNSIGNED NOT NULL DEFAULT '0',
+  `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 COLLATE armscii8_general_ci DEFAULT NULL COMMENT 'Should be Armenian letters',
+  `ARMENIAN` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `ENGLISH` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SOURCE` char(3) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -186,8 +188,8 @@ INSERT INTO `tbl_adjectives` (`AID`, `AGRP`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`,
 --
 
 CREATE TABLE `tbl_adj_groups` (
-  `GID` int(10) UNSIGNED NOT NULL,
-  `GNAME` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT ''
+  `GID` int UNSIGNED NOT NULL,
+  `GNAME` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -211,11 +213,11 @@ INSERT INTO `tbl_adj_groups` (`GID`, `GNAME`) VALUES
 --
 
 CREATE TABLE `tbl_countries` (
-  `COUNTRY` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `NATIONALITY` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `LANGUAGE` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `OBJECT` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `CAPITAL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT ''
+  `COUNTRY` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `NATIONALITY` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `LANGUAGE` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `OBJECT` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `CAPITAL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -251,14 +253,14 @@ INSERT INTO `tbl_countries` (`COUNTRY`, `NATIONALITY`, `LANGUAGE`, `OBJECT`, `CA
 --
 
 CREATE TABLE `tbl_nouns` (
-  `NID` int(10) NOT NULL,
-  `NGRP` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 DEFAULT NULL COMMENT 'Should be Armenian letters',
-  `NOMINATIVE` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PLURAL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `POSESSIVE` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `ENGLISH` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SOURCE` varchar(4) COLLATE latin1_general_ci DEFAULT NULL
+  `NID` int NOT NULL,
+  `NGRP` int UNSIGNED NOT NULL DEFAULT '0',
+  `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 COLLATE armscii8_general_ci DEFAULT NULL COMMENT 'Should be Armenian letters',
+  `NOMINATIVE` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PLURAL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `POSESSIVE` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `ENGLISH` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SOURCE` varchar(4) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -1381,8 +1383,8 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 --
 
 CREATE TABLE `tbl_nou_groups` (
-  `GID` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `GNAME` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT ''
+  `GID` int UNSIGNED NOT NULL DEFAULT '0',
+  `GNAME` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -1425,10 +1427,10 @@ INSERT INTO `tbl_nou_groups` (`GID`, `GNAME`) VALUES
 --
 
 CREATE TABLE `tbl_numbers` (
-  `RNUM` int(11) NOT NULL DEFAULT '0',
-  `ARMENIAN` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `ENGLISH` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SOURCE` char(3) COLLATE latin1_general_ci DEFAULT NULL
+  `RNUM` int NOT NULL DEFAULT '0',
+  `ARMENIAN` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `ENGLISH` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SOURCE` char(3) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -1536,11 +1538,11 @@ INSERT INTO `tbl_numbers` (`RNUM`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VALUES
 --
 
 CREATE TABLE `tbl_parts` (
-  `PID` int(11) NOT NULL,
-  `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 DEFAULT NULL COMMENT 'Should be Armenian letters',
-  `ARMENIAN` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `ENGLISH` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SOURCE` varchar(4) COLLATE latin1_general_ci DEFAULT NULL
+  `PID` int NOT NULL,
+  `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 COLLATE armscii8_general_ci DEFAULT NULL COMMENT 'Should be Armenian letters',
+  `ARMENIAN` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `ENGLISH` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SOURCE` varchar(4) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -1630,13 +1632,13 @@ INSERT INTO `tbl_parts` (`PID`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VA
 --
 
 CREATE TABLE `tbl_phrases` (
-  `PID` int(11) NOT NULL,
-  `PGRP` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `CONVID` int(11) NOT NULL DEFAULT '0',
-  `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 DEFAULT NULL COMMENT 'Should be Armenian letters',
-  `ARMENIAN` varchar(128) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `ENGLISH` varchar(128) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SOURCE` varchar(4) COLLATE latin1_general_ci DEFAULT NULL
+  `PID` int NOT NULL,
+  `PGRP` int UNSIGNED NOT NULL DEFAULT '0',
+  `CONVID` int NOT NULL DEFAULT '0',
+  `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 COLLATE armscii8_general_ci DEFAULT NULL COMMENT 'Should be Armenian letters',
+  `ARMENIAN` varchar(128) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `ENGLISH` varchar(128) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SOURCE` varchar(4) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -2899,8 +2901,8 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 --
 
 CREATE TABLE `tbl_phr_groups` (
-  `GID` int(11) UNSIGNED NOT NULL DEFAULT '0',
-  `GNAME` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT ''
+  `GID` int UNSIGNED NOT NULL DEFAULT '0',
+  `GNAME` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -2949,11 +2951,11 @@ INSERT INTO `tbl_phr_groups` (`GID`, `GNAME`) VALUES
 --
 
 CREATE TABLE `tbl_pronouns` (
-  `PID` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `PERID` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `ARMENIAN` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `ENGLISH` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SOURCE` char(3) COLLATE latin1_general_ci NOT NULL DEFAULT ''
+  `PID` int UNSIGNED NOT NULL DEFAULT '0',
+  `PERID` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `ARMENIAN` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `ENGLISH` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SOURCE` char(3) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -3018,22 +3020,22 @@ INSERT INTO `tbl_pronouns` (`PID`, `PERID`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VAL
 --
 
 CREATE TABLE `tbl_verbs` (
-  `VID` int(11) NOT NULL,
-  `VGRP` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 DEFAULT NULL COMMENT 'Should be Armenian letters',
-  `BAI` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `VERB` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `COMMANDINF` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `COMMANDFORM` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTACTIVE` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTSIMPLE` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '' COMMENT 'preterite',
-  `PRESENTPERFECT` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTCONTINOUS` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SIMPLEFUTURE` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `DESIRABLEFUTURE` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `FUTUREINPAST` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `NEEDMUSTHAVETO` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SOURCE` varchar(4) COLLATE latin1_general_ci NOT NULL DEFAULT ''
+  `VID` int NOT NULL,
+  `VGRP` int UNSIGNED NOT NULL DEFAULT '0',
+  `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 COLLATE armscii8_general_ci DEFAULT NULL COMMENT 'Should be Armenian letters',
+  `BAI` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `VERB` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `COMMANDINF` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `COMMANDFORM` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTACTIVE` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTSIMPLE` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '' COMMENT 'preterite',
+  `PRESENTPERFECT` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTCONTINOUS` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SIMPLEFUTURE` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `DESIRABLEFUTURE` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `FUTUREINPAST` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `NEEDMUSTHAVETO` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SOURCE` varchar(4) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -3257,66 +3259,66 @@ INSERT INTO `tbl_verbs` (`VID`, `VGRP`, `ARMSCRIPT`, `BAI`, `VERB`, `COMMANDINF`
 --
 
 CREATE TABLE `tbl_verbs_big` (
-  `VID` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `BAI` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `VERB` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `COMMAND-INF` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `COMMAND-FORM` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTACTIVE-1` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTACTIVE-2INF` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTACTIVE-3` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTACTIVE-1PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTACTIVE-2FORM` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTACTIVE-3PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTSIMPLE-1` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTSIMPLE-2INF` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTSIMPLE-3` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTSIMPLE-1PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTSIMPLE-2FORM` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTSIMPLE-3PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTPERFECT-1` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTPERFECT-2INF` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTPERFECT-3` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTPERFECT-1PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTPERFECT-2FORM` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PRESENTPERFECT-3PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTCONTINOUS-1` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTCONTINOUS-2INF` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTCONTINOUS-3` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTCONTINOUS-1PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTCONTINOUS-2FORM` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `PASTCONTINOUS-3PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SIMPLEFUTURE-1` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SIMPLEFUTURE-2INF` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SIMPLEFUTURE-3` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SIMPLEFUTURE-1PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SIMPLEFUTURE-2FORM` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SIMPLEFUTURE-3PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `DESIRABLEFUTURE-1` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `DESIRABLEFUTURE-2INF` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `DESIRABLEFUTURE-3` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `DESIRABLEFUTURE-1PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `DESIRABLEFUTURE-2FORM` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `DESIRABLEFUTURE-3PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `FUTUREINPAST-1` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `FUTUREINPAST-2INF` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `FUTUREINPAST-3` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `FUTUREINPAST-1PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `FUTUREINPAST-2FORM` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `FUTUREINPAST-3PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `NEEDMUSTHAVETO-1` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `NEEDMUSTHAVETO-2INF` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `NEEDMUSTHAVETO-3` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `NEEDMUSTHAVETO-1PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `NEEDMUSTHAVETO-2FORM` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `NEEDMUSTHAVETO-3PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `HARAGATAR-1` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `HARAGATAR-2INF` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `HARAGATAR-3` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `HARAGATAR-1PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `HARAGATAR-2FORM` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `HARAGATAR-3PL` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SOURCE` varchar(4) COLLATE latin1_general_ci NOT NULL DEFAULT ''
+  `VID` int UNSIGNED NOT NULL DEFAULT '0',
+  `BAI` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `VERB` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `COMMAND-INF` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `COMMAND-FORM` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTACTIVE-1` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTACTIVE-2INF` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTACTIVE-3` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTACTIVE-1PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTACTIVE-2FORM` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTACTIVE-3PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTSIMPLE-1` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTSIMPLE-2INF` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTSIMPLE-3` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTSIMPLE-1PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTSIMPLE-2FORM` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTSIMPLE-3PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTPERFECT-1` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTPERFECT-2INF` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTPERFECT-3` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTPERFECT-1PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTPERFECT-2FORM` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PRESENTPERFECT-3PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTCONTINOUS-1` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTCONTINOUS-2INF` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTCONTINOUS-3` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTCONTINOUS-1PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTCONTINOUS-2FORM` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `PASTCONTINOUS-3PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SIMPLEFUTURE-1` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SIMPLEFUTURE-2INF` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SIMPLEFUTURE-3` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SIMPLEFUTURE-1PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SIMPLEFUTURE-2FORM` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SIMPLEFUTURE-3PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `DESIRABLEFUTURE-1` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `DESIRABLEFUTURE-2INF` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `DESIRABLEFUTURE-3` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `DESIRABLEFUTURE-1PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `DESIRABLEFUTURE-2FORM` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `DESIRABLEFUTURE-3PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `FUTUREINPAST-1` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `FUTUREINPAST-2INF` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `FUTUREINPAST-3` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `FUTUREINPAST-1PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `FUTUREINPAST-2FORM` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `FUTUREINPAST-3PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `NEEDMUSTHAVETO-1` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `NEEDMUSTHAVETO-2INF` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `NEEDMUSTHAVETO-3` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `NEEDMUSTHAVETO-1PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `NEEDMUSTHAVETO-2FORM` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `NEEDMUSTHAVETO-3PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `HARAGATAR-1` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `HARAGATAR-2INF` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `HARAGATAR-3` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `HARAGATAR-1PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `HARAGATAR-2FORM` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `HARAGATAR-3PL` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `SOURCE` varchar(4) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -3338,8 +3340,8 @@ INSERT INTO `tbl_verbs_big` (`VID`, `BAI`, `VERB`, `COMMAND-INF`, `COMMAND-FORM`
 --
 
 CREATE TABLE `tbl_ver_groups` (
-  `GID` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `GNAME` varchar(32) COLLATE latin1_general_ci NOT NULL DEFAULT ''
+  `GID` int UNSIGNED NOT NULL DEFAULT '0',
+  `GNAME` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -3428,32 +3430,39 @@ ALTER TABLE `tbl_verbs`
 -- AUTO_INCREMENT for table `tbl_adjectives`
 --
 ALTER TABLE `tbl_adjectives`
-  MODIFY `AID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `AID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+
 --
 -- AUTO_INCREMENT for table `tbl_adj_groups`
 --
 ALTER TABLE `tbl_adj_groups`
-  MODIFY `GID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `GID` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
 --
 -- AUTO_INCREMENT for table `tbl_nouns`
 --
 ALTER TABLE `tbl_nouns`
-  MODIFY `NID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1107;
+  MODIFY `NID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1107;
+
 --
 -- AUTO_INCREMENT for table `tbl_parts`
 --
 ALTER TABLE `tbl_parts`
-  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+
 --
 -- AUTO_INCREMENT for table `tbl_phrases`
 --
 ALTER TABLE `tbl_phrases`
-  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1247;
+  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1247;
+
 --
 -- AUTO_INCREMENT for table `tbl_verbs`
 --
 ALTER TABLE `tbl_verbs`
-  MODIFY `VID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
+  MODIFY `VID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
