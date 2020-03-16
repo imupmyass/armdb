@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Mar 14, 2020 at 04:05 PM
+-- Generation Time: Mar 16, 2020 at 09:22 PM
 -- Server version: 8.0.19
 -- PHP Version: 7.4.1
 
@@ -660,7 +660,7 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (390, 100, NULL, 'hoaknakee', 'x', 'x', 'plural', NULL),
 (391, 8, NULL, 'aisoar', 'x', 'x', 'today', ''),
 (392, 8, NULL, 'vah*a', 'x', 'vah*ava', 'tomorrow', ''),
-(393, 8, NULL, 'yAreek', 'x', 'yAreekva', 'yesterday', ''),
+(393, 8, 'երեկ', 'yAreek', 'x', 'yAreekva', 'yesterday', ''),
 (394, 8, NULL, 'daree', 'x', 'x', 'year', ''),
 (395, 8, NULL, 'ama', 'x', 'x', 'year (old a)', ''),
 (396, 8, NULL, 'shapat', 'x', 'x', 'week', ''),
@@ -1085,7 +1085,7 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (815, 21, NULL, 'x', 'x', 'x', 'mercury etc...', NULL),
 (816, 21, NULL, 'x', 'x', 'x', 'space man / astronaut', NULL),
 (817, 21, NULL, 'x', 'x', 'x', 'satellite', NULL),
-(818, 22, NULL, 'x', 'x', 'x', 'season', NULL),
+(818, 22, 'եղանակները', 'yAh*naknAree', 'x', 'x', 'seasons', NULL),
 (819, 22, NULL, 'garoon', 'x', 'x', 'spring', NULL),
 (820, 22, NULL, 'amar', 'x', 'x', 'summer', NULL),
 (821, 22, NULL, 'ashoon', 'x', 'x', 'autumn', NULL),
@@ -1155,9 +1155,9 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (885, 17, NULL, 'ashtarak', 'x', 'x', 'tower', NULL),
 (886, 14, NULL, 'ankoh*reen', 'x', 'x', 'bed', NULL),
 (887, 17, NULL, 'danag~k', 'x', 'x', 'small house (cottage)', NULL),
-(888, 100, NULL, 'pos', 'x', 'x', 'hole (ground)', NULL),
-(889, 100, NULL, 'tAl', 'x', 'x', 'thread', NULL);
+(888, 100, NULL, 'pos', 'x', 'x', 'hole (ground)', NULL);
 INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `POSESSIVE`, `ENGLISH`, `SOURCE`) VALUES
+(889, 100, NULL, 'tAl', 'x', 'x', 'thread', NULL),
 (890, 14, NULL, 'Radeeo', 'x', 'x', 'radio', NULL),
 (891, 14, NULL, 'd~takatsoocheech', 'x', 'x', 'heater', NULL),
 (892, 1, NULL, 'zateek', 'x', 'x', 'ladybird', NULL),
@@ -1374,7 +1374,8 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (1103, 0, NULL, 'canon', '', '', 'ruler (measuring)', NULL),
 (1104, 0, 'կամավոր', 'gamavor', 'gamavorner', 'gamavorner', 'volunteer', NULL),
 (1105, 0, 'կրկես', 'kirkAs', '', '', 'circus', 'andr'),
-(1106, 19, 'աշխատանք', 'ashkhatank', 'x', 'x', 'work', '');
+(1106, 19, 'աշխատանք', 'ashkhatank', 'x', 'x', 'work', ''),
+(1107, 0, 'ավազ', 'avaz', '', '', 'sand', 'goth');
 
 -- --------------------------------------------------------
 
@@ -1427,7 +1428,9 @@ INSERT INTO `tbl_nou_groups` (`GID`, `GNAME`) VALUES
 --
 
 CREATE TABLE `tbl_numbers` (
+  `NID` int NOT NULL,
   `RNUM` int NOT NULL DEFAULT '0',
+  `ARMSCRIPT` varchar(24) CHARACTER SET armscii8 COLLATE armscii8_general_ci DEFAULT NULL,
   `ARMENIAN` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `ENGLISH` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `SOURCE` char(3) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL
@@ -1437,99 +1440,99 @@ CREATE TABLE `tbl_numbers` (
 -- Dumping data for table `tbl_numbers`
 --
 
-INSERT INTO `tbl_numbers` (`RNUM`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VALUES
-(0, 'zAro', 'zero', NULL),
-(1, 'mAk', 'one', NULL),
-(2, 'yArkoo', 'two', NULL),
-(2, 'yArkoos', 'two', NULL),
-(3, 'yAreeg', 'three', NULL),
-(4, 'chors', 'four', NULL),
-(5, 'heeng~k', 'five', NULL),
-(6, 'vAts', 'six', NULL),
-(7, 'yot', 'seven', NULL),
-(8, 'oot', 'eight', NULL),
-(9, 'eena', 'nine', NULL),
-(10, 'd~tas', 'ten', NULL),
-(11, 'd~tas nih mAk', 'eleven', NULL),
-(12, 'd~tas nih yArkoo', 'twelve', NULL),
-(13, 'd~tas nih yAreeg', 'thirteen', NULL),
-(20, 'ksan', 'twenty', NULL),
-(21, 'ksan mAk', 'twenty one', NULL),
-(22, 'ksan yArkoo', 'twenty two', NULL),
-(23, 'ksan yAreeg', 'twenty three', NULL),
-(30, 'yArisoon', 'thirty', NULL),
-(31, 'yArisoon mAk', 'thirty one', NULL),
-(40, 'karasoon', 'forty', NULL),
-(41, 'karasoon mAk', 'forty one', NULL),
-(50, 'heesoon', 'fifty', NULL),
-(51, 'heesoon mAk', 'fifty one', NULL),
-(60, 'vatsoon (not vAtsoon)', 'sixty', NULL),
-(61, 'vatsoon mAk', 'sixty one', NULL),
-(70, 'yotanasoon', 'seventy', NULL),
-(71, 'yotanasoon mAk', 'seventy one', NULL),
-(80, 'ootsoon', 'eighty', NULL),
-(81, 'ootsoon mAk', 'eighty one', NULL),
-(90, 'eenasoon', 'ninety', NULL),
-(91, 'eenasoon mAk', 'ninety one', NULL),
-(100, 'haryoor', 'one hundred', NULL),
-(101, 'haryoor mAk', 'one hundred and one', NULL),
-(102, 'haryoor yArkoo', 'one hundred and two', NULL),
-(110, 'haryoor d~tas', 'one hundred and ten', NULL),
-(111, 'haryoor d~tas nih mAk', 'one hundred and eleven', NULL),
-(200, 'haryoor ksan', 'one hundred and twenty', NULL),
-(201, 'haryoor ksan mAk', 'one hundred and twenty one', NULL),
-(300, 'yAreeg haryoor', 'three hundred', NULL),
-(1000, 'hazar', 'one thousand', NULL),
-(1001, 'hazar mAk', 'one thousand and one', NULL),
-(1100, 'hazar haryoor', 'one thousand one hundred', NULL),
-(1101, 'hazar haryoor mAk', 'one thousand one hundred and one', NULL),
-(1110, 'hazar haryoor d~tas', 'one thousand one hundred and ten', NULL),
-(2000, 'yArkoo hazar', 'two thousand', NULL),
-(100000, 'haryoor hazar', 'one hundred thousand', NULL),
-(1000000, 'meelyon', 'one million', NULL),
-(1000000000, 'beelyon', 'one billion', NULL),
-(1000000000, 'meelyard', 'one billion', 'r'),
-(1, 'adzyeen', 'one', 'r'),
-(2, 'divah', 'two', 'r'),
-(3, 'diree', 'three', 'r'),
-(4, 'chiteeree', 'four', 'r'),
-(5, 'b~peeyats', 'five', 'r'),
-(6, 'shAsts', 'six', 'r'),
-(7, 'seeAm', 'seven', 'r'),
-(8, 'voseeAm', 'eight', 'r'),
-(9, 'dzyAvits', 'nine', 'r'),
-(10, 'dzyAsits', 'ten', 'r'),
-(11, 'adzyeenatsits??', 'eleven', 'r'),
-(12, 'diveenatsits', 'twelve', 'r'),
-(13, 'diReenatsits', 'thirteen', 'r'),
-(14, 'cheeteeRnatsits', 'fourteen', 'r'),
-(15, 'b~peetnatsits', 'fifteen', 'r'),
-(16, 'shAstnatsits', 'sixteen', 'r'),
-(17, 'seeAmnatsits', 'seventeen', 'r'),
-(18, 'voseeAmnatsits', 'eighteen', 'r'),
-(19, 'dzyAvitsnatsits', 'nineteen', 'r'),
-(20, 'divatsits', 'twenty', 'r'),
-(21, 'divatsitsadzyeen', 'twenty one', 'r'),
-(30, 'dReetsits', 'thirty', 'r'),
-(31, 'dReetsitsadzyeen', 'thirty one', 'r'),
-(40, 'soRik', 'forty', 'r'),
-(41, 'soRikadzyeen', 'fortyone', 'r'),
-(50, 'b~peedeesyat', 'fifty', 'r'),
-(51, 'b~peedeesyatadzyeen', 'fifty one', 'r'),
-(60, 'shAsdeesyat', 'sixty one', 'r'),
-(61, 'shAsdeesyatadzyeen', 'sixty one', 'r'),
-(70, 'seeAmdzeesyat', 'seventy', 'r'),
-(71, 'seeAmdzeesyatadzyeen', 'seventy one', 'r'),
-(80, 'vohseeAmdeesyit', 'eighty', 'r'),
-(81, 'vohseeAmdeesyit', 'eighty one', 'r'),
-(90, 'dzyAvAnostih', 'ninety', 'r'),
-(91, 'dzyAvAnostihadzyeen', 'ninety one', 'r'),
-(100, 'sto', 'one hundred', 'r'),
-(101, 'sto adzyeen', 'one hundred and one', 'r'),
-(200, 'divyAstsA', 'two hunrded', 'r'),
-(0, 'diReestA', 'three hundred', 'r'),
-(400, 'chiteerista', 'four hundred', 'r'),
-(500, 'b~peeyatsot', 'five hundred', NULL);
+INSERT INTO `tbl_numbers` (`NID`, `RNUM`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VALUES
+(1, 0, 'զրո', 'zAro', 'zero', NULL),
+(2, 1, 'մեկ', 'mAk', 'one', NULL),
+(3, 2, 'երկու', 'yArkoo', 'two', NULL),
+(4, 2, 'երկուս', 'yArkoos', 'two', NULL),
+(5, 3, 'երեք', 'yAreek', 'three', NULL),
+(6, 4, 'չորս', 'chors', 'four', NULL),
+(7, 5, 'հինգ', 'heeng~k', 'five', NULL),
+(8, 6, 'վեց', 'vAts', 'six', NULL),
+(9, 7, 'յոթ', 'yot', 'seven', NULL),
+(10, 8, 'ութ', 'oot', 'eight', NULL),
+(11, 9, 'ինը', 'eena', 'nine', NULL),
+(12, 10, 'տաս', 'd~tas', 'ten', NULL),
+(13, 11, 'տասնմեկ', 'd~tas nih mAk', 'eleven', NULL),
+(14, 12, 'տասներկու', 'd~tas nih yArkoo', 'twelve', NULL),
+(15, 13, 'տասներեք', 'd~tas nih yAreeg', 'thirteen', NULL),
+(16, 20, 'քսան', 'ksan', 'twenty', NULL),
+(17, 21, 'քսանմեկ', 'ksan mAk', 'twenty one', NULL),
+(18, 22, 'քսաներկու', 'ksan yArkoo', 'twenty two', NULL),
+(19, 23, 'քսաներեք', 'ksan yAreeg', 'twenty three', NULL),
+(20, 30, 'երեսուն', 'yArisoon', 'thirty', NULL),
+(21, 31, 'երեսունմեկ', 'yArisoon mAk', 'thirty one', NULL),
+(22, 40, 'քառասուն', 'karasoon', 'forty', NULL),
+(23, 41, 'քառասուն մեկ', 'karasoon mAk', 'forty one', NULL),
+(24, 50, 'հիսուն', 'heesoon', 'fifty', NULL),
+(25, 51, 'հիսուն մեկ', 'heesoon mAk', 'fifty one', NULL),
+(26, 60, 'վաթսուն', 'vatsoon (not vAtsoon)', 'sixty', NULL),
+(27, 61, 'վաթսունմեկ', 'vatsoon mAk', 'sixty one', NULL),
+(28, 70, 'յոթանասուն', 'yotanasoon', 'seventy', NULL),
+(29, 71, 'յոթանասուն մեկ', 'yotanasoon mAk', 'seventy one', NULL),
+(30, 80, 'ութսուն', 'ootsoon', 'eighty', NULL),
+(31, 81, 'ութսուն մեկ', 'ootsoon mAk', 'eighty one', NULL),
+(32, 90, 'իննսուն', 'eenasoon', 'ninety', NULL),
+(33, 91, 'իննսուն մեկ', 'eenasoon mAk', 'ninety one', NULL),
+(34, 100, 'հարյուր', 'haryoor', 'one hundred', NULL),
+(35, 101, 'հարյուր մեկ', 'haryoor mAk', 'one hundred and one', NULL),
+(36, 102, 'հարյուր երկու', 'haryoor yArkoo', 'one hundred and two', NULL),
+(37, 110, 'հարյուր տաս', 'haryoor d~tas', 'one hundred and ten', NULL),
+(38, 111, 'հարյուր տասնմեկ', 'haryoor d~tas nih mAk', 'one hundred and eleven', NULL),
+(39, 200, 'երկու հարյուր', 'yArkoo haryoor', 'one hundred and twenty', NULL),
+(40, 201, 'երկու հարյուր  մեկ', 'yArkoo haryoor mAk', 'one hundred and twenty one', NULL),
+(41, 300, NULL, 'yAreeg haryoor', 'three hundred', NULL),
+(42, 1000, NULL, 'hazar', 'one thousand', NULL),
+(43, 1001, NULL, 'hazar mAk', 'one thousand and one', NULL),
+(44, 1100, NULL, 'hazar haryoor', 'one thousand one hundred', NULL),
+(45, 1101, NULL, 'hazar haryoor mAk', 'one thousand one hundred and one', NULL),
+(46, 1110, NULL, 'hazar haryoor d~tas', 'one thousand one hundred and ten', NULL),
+(47, 2000, NULL, 'yArkoo hazar', 'two thousand', NULL),
+(48, 100000, NULL, 'haryoor hazar', 'one hundred thousand', NULL),
+(49, 1000000, NULL, 'meelyon', 'one million', NULL),
+(50, 1000000000, NULL, 'beelyon', 'one billion', NULL),
+(51, 1000000000, NULL, 'meelyard', 'one billion', 'r'),
+(52, 1, NULL, 'adzyeen', 'one', 'r'),
+(53, 2, NULL, 'divah', 'two', 'r'),
+(54, 3, NULL, 'diree', 'three', 'r'),
+(55, 4, NULL, 'chiteeree', 'four', 'r'),
+(56, 5, NULL, 'b~peeyats', 'five', 'r'),
+(57, 6, NULL, 'shAsts', 'six', 'r'),
+(58, 7, NULL, 'seeAm', 'seven', 'r'),
+(59, 8, NULL, 'voseeAm', 'eight', 'r'),
+(60, 9, NULL, 'dzyAvits', 'nine', 'r'),
+(61, 10, NULL, 'dzyAsits', 'ten', 'r'),
+(62, 11, NULL, 'adzyeenatsits??', 'eleven', 'r'),
+(63, 12, NULL, 'diveenatsits', 'twelve', 'r'),
+(64, 13, NULL, 'diReenatsits', 'thirteen', 'r'),
+(65, 14, NULL, 'cheeteeRnatsits', 'fourteen', 'r'),
+(66, 15, NULL, 'b~peetnatsits', 'fifteen', 'r'),
+(67, 16, NULL, 'shAstnatsits', 'sixteen', 'r'),
+(68, 17, NULL, 'seeAmnatsits', 'seventeen', 'r'),
+(69, 18, NULL, 'voseeAmnatsits', 'eighteen', 'r'),
+(70, 19, NULL, 'dzyAvitsnatsits', 'nineteen', 'r'),
+(71, 20, NULL, 'divatsits', 'twenty', 'r'),
+(72, 21, NULL, 'divatsitsadzyeen', 'twenty one', 'r'),
+(73, 30, NULL, 'dReetsits', 'thirty', 'r'),
+(74, 31, NULL, 'dReetsitsadzyeen', 'thirty one', 'r'),
+(75, 40, NULL, 'soRik', 'forty', 'r'),
+(76, 41, NULL, 'soRikadzyeen', 'fortyone', 'r'),
+(77, 50, NULL, 'b~peedeesyat', 'fifty', 'r'),
+(78, 51, NULL, 'b~peedeesyatadzyeen', 'fifty one', 'r'),
+(79, 60, NULL, 'shAsdeesyat', 'sixty one', 'r'),
+(80, 61, NULL, 'shAsdeesyatadzyeen', 'sixty one', 'r'),
+(81, 70, NULL, 'seeAmdzeesyat', 'seventy', 'r'),
+(82, 71, NULL, 'seeAmdzeesyatadzyeen', 'seventy one', 'r'),
+(83, 80, NULL, 'vohseeAmdeesyit', 'eighty', 'r'),
+(84, 81, NULL, 'vohseeAmdeesyit', 'eighty one', 'r'),
+(85, 90, NULL, 'dzyAvAnostih', 'ninety', 'r'),
+(86, 91, NULL, 'dzyAvAnostihadzyeen', 'ninety one', 'r'),
+(87, 100, NULL, 'sto', 'one hundred', 'r'),
+(88, 101, NULL, 'sto adzyeen', 'one hundred and one', 'r'),
+(89, 200, NULL, 'divyAstsA', 'two hunrded', 'r'),
+(90, 0, NULL, 'diReestA', 'three hundred', 'r'),
+(91, 400, NULL, 'chiteerista', 'four hundred', 'r'),
+(92, 500, NULL, 'b~peeyatsot', 'five hundred', NULL);
 
 -- --------------------------------------------------------
 
@@ -1658,8 +1661,8 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (10, 11, 0, NULL, 'yArkrort', 'second', ''),
 (11, 11, 0, NULL, 'yArort', 'third', ''),
 (12, 11, 0, NULL, 'chorort', 'fourth', ''),
-(13, 11, 0, NULL, 'heengrort', 'fifth', ''),
-(14, 11, 0, NULL, 'kAs', 'half', ''),
+(13, 11, 0, 'հինգերորդ', 'heengrort', 'fifth', ''),
+(14, 11, 0, 'Կես', 'kAs', 'half', ''),
 (15, 11, 0, NULL, 'mAk yArort', 'one third', ''),
 (16, 11, 0, NULL, 'mAk chorort', 'one fourth (a quarter)', ''),
 (17, 11, 0, NULL, 'one plus one equals two', 'mAkeen g~koomerats mAk havasarA yArkoo', ''),
@@ -1951,9 +1954,9 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (303, 14, 0, NULL, 'yAyrig arevot yAh*anak Ar.', 'Yesterday was sunny.', NULL),
 (304, 14, 0, NULL, 'eench pAs een A isor yAh*anak?', 'What kind of weather is it today?', NULL),
 (305, 14, 0, NULL, 'eench pAs een A isor yAh*anaka?', 'What kind of weather is it today?', NULL),
-(306, 14, 0, NULL, 'dzimrana dzyoon A galees', 'It snows in winter.', NULL),
+(306, 14, 0, 'ձմռանը ձյուն է գալիս', 'dzimRana dzyoon A galees', 'It snows in winter.', NULL),
 (307, 14, 0, NULL, 'garoon A', 'It is spring', NULL),
-(308, 14, 0, NULL, 'dzimrana', 'in winter', NULL),
+(308, 14, 0, 'ձմռանը', 'dzimRana', 'in winter', NULL),
 (309, 14, 0, NULL, 'ashana', 'in autumn', NULL),
 (310, 14, 0, NULL, 'amrana', 'in summer', NULL),
 (311, 14, 0, NULL, 'garnana', 'in spring', NULL),
@@ -2042,7 +2045,7 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (394, 5, 0, NULL, 'yes ginam h*anoot Astridee hAt.', 'I\'m going to the shop with Astrid.', NULL),
 (395, 16, 0, NULL, 'vra', 'on', NULL),
 (396, 16, 0, NULL, 'mAch', 'in', NULL),
-(397, 16, 0, NULL, 'dak', 'under', NULL),
+(397, 16, 0, 'տակ', 'dak', 'under', NULL),
 (398, 16, 0, NULL, 'hAtAvoom', 'behind', NULL),
 (399, 16, 0, NULL, 'vArAvoom', 'on top/at the top', NULL),
 (400, 16, 0, NULL, 'mAchtAr*', 'middle', NULL),
@@ -2895,7 +2898,11 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1246, 0, 0, 'ես բավականաչափ փորձ ունեմ', 'bavakan', 'I have enough experience', 'goth'),
 (1247, 0, 0, 'Հայոց բանակը', 'Haiyots banakee', 'Armenian Army', 'goth'),
 (1248, 0, 0, 'ռուսական բանակը', 'Roosakan banakee', 'The Russian army', 'goth'),
-(1249, 0, 0, 'Ուժեղ բանակ', 'oozhegh banak', 'A strong army.', 'goth');
+(1249, 0, 0, 'Ուժեղ բանակ', 'oozhegh banak', 'A strong army.', 'goth'),
+(1250, 0, 0, 'ես կամավոր էի', 'yes gamavor Aee', 'I was a volunteer', 'goth'),
+(1251, 0, 0, 'Ես խոսեցի կամավորի հետ', 'Yes h*osAtsee gamavoree hAt', 'I spoke to the volunteer', 'goog'),
+(1252, 0, 0, 'կամավորն օգնեց ինձ', 'gamavorn oagknAts eents', 'The volunteer helped me.', 'goog'),
+(1253, 0, 0, 'հաջորդ դասը', 'hadjort dasee', 'next lesson', 'goth');
 
 -- --------------------------------------------------------
 
@@ -3116,7 +3123,7 @@ INSERT INTO `tbl_verbs` (`VID`, `VGRP`, `ARMSCRIPT`, `BAI`, `VERB`, `COMMANDINF`
 (68, 15, NULL, 'naiAl', 'to watch to look', 'naieer', 'x', '', '', '', '', '', '', '', '', ''),
 (69, 16, NULL, 'nishanikAl', 'to mean', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (70, 13, NULL, 'nistAl', 'to site', 'nasteer', 'nastAk', '', '', '', '', '', '', '', '', ''),
-(71, 17, NULL, 'oaktnal', 'to help', 'x', 'x', '', '', '', '', '', '', '', '', ''),
+(71, 17, 'օգնել', 'oaktnal', 'to help', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (72, 12, NULL, 'oonenal', 'to have', 'oonAtseer', 'oonAtsAk', 'oonem', 'oonAtsa', 'oonAtsAlem', 'oonAnoomAee', 'oonenalooem', '', 'oonenalooAee', 'oonAnam', ''),
 (73, 17, NULL, 'oorectzAl', 'to accompany', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (74, 17, NULL, 'ooshanal', 'to be late', 'x', 'x', '', '', '', '', '', '', '', '', ''),
@@ -3402,6 +3409,12 @@ ALTER TABLE `tbl_nouns`
   ADD PRIMARY KEY (`NID`);
 
 --
+-- Indexes for table `tbl_numbers`
+--
+ALTER TABLE `tbl_numbers`
+  ADD PRIMARY KEY (`NID`);
+
+--
 -- Indexes for table `tbl_parts`
 --
 ALTER TABLE `tbl_parts`
@@ -3445,7 +3458,13 @@ ALTER TABLE `tbl_adj_groups`
 -- AUTO_INCREMENT for table `tbl_nouns`
 --
 ALTER TABLE `tbl_nouns`
-  MODIFY `NID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1107;
+  MODIFY `NID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1108;
+
+--
+-- AUTO_INCREMENT for table `tbl_numbers`
+--
+ALTER TABLE `tbl_numbers`
+  MODIFY `NID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `tbl_parts`
@@ -3457,7 +3476,7 @@ ALTER TABLE `tbl_parts`
 -- AUTO_INCREMENT for table `tbl_phrases`
 --
 ALTER TABLE `tbl_phrases`
-  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1250;
+  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1254;
 
 --
 -- AUTO_INCREMENT for table `tbl_verbs`
