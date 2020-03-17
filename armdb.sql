@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Mar 16, 2020 at 09:22 PM
+-- Generation Time: Mar 17, 2020 at 05:53 AM
 -- Server version: 8.0.19
 -- PHP Version: 7.4.1
 
@@ -768,7 +768,7 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (498, 100, NULL, 'martgodz', 'x', 'x', 'battery (alkaline)', NULL),
 (499, 100, NULL, 'apahovagalootsyoon', 'x', 'x', 'insurance', NULL),
 (500, 25, NULL, 'harts', 'x', 'x', 'question', NULL),
-(501, 25, NULL, 'patas-h*an', 'x', 'x', 'answer', NULL),
+(501, 25, 'պատասխան', 'patas-h*an', 'x', 'x', 'answer', NULL),
 (502, 100, NULL, 'das', 'x', 'x', 'lesson', NULL),
 (503, 100, NULL, 'hamArk', 'x', 'x', 'concert', NULL),
 (504, 100, NULL, 'marancha', 'x', 'x', 'growl', NULL),
@@ -2849,7 +2849,7 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1197, 0, 0, NULL, 'yes oozoomem soverAl mAkananeree maseen', 'I want to learn about cars.', NULL),
 (1198, 0, 0, NULL, 'yes pAtkA eemenam mAkananeree maseen', 'I need to know something about cars.', NULL),
 (1199, 0, 0, NULL, 'doo shat h*Alatsee', 'You are very clever.', NULL),
-(1200, 0, 0, NULL, 'yes oonem mee kanee harts', 'I have some questions.', NULL),
+(1200, 0, 0, 'Ես ունեմ մի քանի  հարցեր', 'yes oonem mee kanee harts', 'I have some questions.', NULL),
 (1201, 0, 0, NULL, 'yes oonem hartsAr', 'I have questions.', NULL),
 (1202, 0, 0, NULL, 'kAlanih oonee mee h*or*ovak vora shat g~karchA', 'Kaelan has a short pipe.', NULL),
 (1203, 0, 0, NULL, 'vornAs ozoom', 'Which do you want?', NULL),
@@ -3120,7 +3120,7 @@ INSERT INTO `tbl_verbs` (`VID`, `VGRP`, `ARMSCRIPT`, `BAI`, `VERB`, `COMMANDINF`
 (65, 9, NULL, 'meeatsnAl', 'to switch on', 'meeatsroo', 'meeatsrAk', 'meeatsnoomem', 'meeatsrAtsee', '', 'meeatsnoomAee', 'meeatsnAlooem', '', 'meeatsnAlooAee', 'meeatsnem', ''),
 (66, 18, NULL, 'mid~tnAl', 'to enter', 'mdeer', 'mdAk', '', '', '', '', '', '', '', '', ''),
 (67, 7, NULL, 'minal', 'to stay', 'x', 'x', '', '', '', '', '', '', '', '', ''),
-(68, 15, NULL, 'naiAl', 'to watch to look', 'naieer', 'x', '', '', '', '', '', '', '', '', ''),
+(68, 15, 'նայել', 'naiAl', 'to watch to look', 'naieer', 'x', '', '', '', '', '', '', '', '', ''),
 (69, 16, NULL, 'nishanikAl', 'to mean', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (70, 13, NULL, 'nistAl', 'to site', 'nasteer', 'nastAk', '', '', '', '', '', '', '', '', ''),
 (71, 17, 'օգնել', 'oaktnal', 'to help', 'x', 'x', '', '', '', '', '', '', '', '', ''),
@@ -3153,8 +3153,8 @@ INSERT INTO `tbl_verbs` (`VID`, `VGRP`, `ARMSCRIPT`, `BAI`, `VERB`, `COMMANDINF`
 (98, 14, NULL, 'yArkAl', 'to sing', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (99, 14, NULL, 'zangAl', 'to call', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (100, 8, NULL, 'zgal', 'to feel', 'zga', 'zgatsAk', 'zgoomem', 'zgatsee', 'zgatsAlem', 'zgoomAee', 'zgalooem', '', 'zgalooAee', 'zgam', ''),
-(101, 17, NULL, 'girAl', 'to write', 'x', 'x', '', '', '', '', '', '', '', '', ''),
-(102, 17, NULL, 'k~gartal', 'to read', 'x', 'x', '', '', '', '', '', '', '', '', ''),
+(101, 17, 'Գրել', 'girAl', 'to write', 'x', 'x', '', '', '', '', '', '', '', '', ''),
+(102, 17, 'Կարդալ', 'k~gartal', 'to read', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (103, 21, NULL, 'patrastAl', 'to make ready', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (104, 11, NULL, 'oorah* leenAl', 'to be glad', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (105, 14, NULL, 'hatchal', 'to bark', 'x', 'x', '', '', '', '', '', '', '', '', ''),
@@ -3186,7 +3186,7 @@ INSERT INTO `tbl_verbs` (`VID`, `VGRP`, `ARMSCRIPT`, `BAI`, `VERB`, `COMMANDINF`
 (131, 9, NULL, 'tsanAl', 'to plant', '', '', '', '', '', '', '', '', '', '', ''),
 (132, 9, NULL, 'd~tingAl', 'to plant a plant', '', '', '', '', '', '', '', '', '', '', ''),
 (133, 8, NULL, 'narvAl', 'to be upset or not in a good moo', '', '', '', '', '', '', '', '', '', '', ''),
-(134, 15, NULL, 'lisAl', 'to listen', '', '', '', '', '', '', '', '', '', '', ''),
+(134, 15, 'Լսել', 'lisAl', 'to listen', '', '', '', '', '', '', '', '', '', '', ''),
 (135, 14, NULL, 'h*aranchal', 'to grunt', '', '', '', '', '', '', '', '', '', '', ''),
 (136, 13, NULL, 'heeshAl', 'to remember', 'heesheer', 'heeshAk', 'heeshoomem', 'heeshAtsee', '', 'heeshoomAee', 'heeshAlooem', '', 'heeshAlooAee', 'heeshem', ''),
 (137, 17, NULL, 'angarkootsyoon anAl', 'to be not good (disorder)', 'angarkootsyoon ara', 'angarkootsyoon arAg~k', 'angarkootsyoon em anoom', 'angarkootsyoon arAtsee', '', 'angarkootsyoon Aee anoom', 'angarkootsyoon em anAloo', '', 'angarkootsyoon Aee anAloo', 'angarkootsyoon anem', ''),
