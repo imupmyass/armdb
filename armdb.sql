@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Mar 17, 2020 at 05:53 AM
+-- Generation Time: Mar 17, 2020 at 08:28 PM
 -- Server version: 8.0.19
 -- PHP Version: 7.4.1
 
@@ -1027,7 +1027,7 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (757, 19, NULL, 'bsheeshk', 'x', 'x', 'doctor', ''),
 (758, 19, NULL, 'kooweer', 'x', 'x', 'nurse', ''),
 (759, 19, NULL, 'voho steek|gan?', 'x', 'x', 'x', ''),
-(760, 19, NULL, 'zeenvor', 'x', 'x', 'soldier', ''),
+(760, 19, 'զինվոր', 'zeenvor', 'x', 'x', 'soldier', ''),
 (761, 19, NULL, 'saldat', 'x', 'x', 'soldier', 'r'),
 (762, 19, NULL, 'navastee', 'x', 'x', 'sailor', ''),
 (763, 19, NULL, 'oosootseech', 'x', 'x', 'teacher male', ''),
@@ -1921,7 +1921,7 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (270, 9, 0, NULL, 'yes pAtkA dAr* dinAm eem mateen.', 'I need to put this medicine on my finger.', NULL),
 (271, 10, 0, NULL, 'yArp doo banakoomAeer', 'When you were in the army.', NULL),
 (272, 10, 0, NULL, 'yes nastatsem bantoom', 'I was in prison.', NULL),
-(273, 10, 0, NULL, 'yes zinvor Aee', 'I was a soldier.', NULL),
+(273, 10, 0, 'ես զինվոր էի', 'yes zinvor Aee', 'I was a soldier.', NULL),
 (274, 10, 0, NULL, 'ginats hARoo', 'Go far away.', NULL),
 (275, 10, 0, NULL, 'heema hARoojar', 'Now far away.', NULL),
 (276, 11, 0, NULL, 'eench As ko asgootsyoonih?', 'What is your nationality?', NULL),
@@ -2408,7 +2408,7 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (756, 0, 0, NULL, 'eenchA dirah anoona?', 'What that called?', NULL),
 (757, 0, 0, NULL, 'mAz divAk paiteets seh*anih.', 'Give us a wooden table (table of wood)', NULL),
 (758, 0, 0, NULL, 'yes pAtkA eemanam eench pAs asem \"lid\" hai-irAn.', 'I need to know how to say \"lid\" in Armenian.', NULL),
-(759, 0, 0, NULL, 'yes oozoomem eemanal....', 'I want to know....', NULL),
+(759, 0, 0, 'ես ուզում եմ իմանալ', 'yes oozoomem eemanal....', 'I want to know....', NULL),
 (760, 0, 0, NULL, 'eents patk-chA ais patarakar*ih.', 'I don\'t need this fork.', NULL),
 (761, 0, 0, NULL, 'ais nyootih papookA.', 'This material is soft.', NULL),
 (762, 0, 0, NULL, 'ais patarakar*ih goshtA. (chorA)', 'This material is hard.', NULL),
@@ -2697,7 +2697,7 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1045, 0, 0, NULL, 'undmeesht', 'forever', NULL),
 (1046, 0, 0, NULL, 'shat nikarnAr kan patee vra', 'There are a lot of paintings on the wall', NULL),
 (1047, 0, 0, NULL, 'yes oozoomem h*osAl meesht haiArAn', 'I always want to speak Armenian.', NULL),
-(1048, 0, 0, NULL, 'yes seeroomem h*osAl haiArAn', 'I love speaking Armenian.', NULL),
+(1048, 0, 0, 'ես սիրում եմ խոսել հայերեն.', 'yes seeroomem h*osAl haiArAn', 'I love speaking Armenian.', NULL),
 (1049, 0, 0, NULL, 'doo karoh*As h*osAl haiArAn', 'Do you speak Armenian?', 'inf'),
 (1050, 0, 0, NULL, 'yes h*osoomem mee poker haiArAn', 'I speak a little (small) Armenian.', NULL),
 (1051, 0, 0, NULL, 'yes h*osoomem mee keech haiArAn', 'I speak a little Armenian.', NULL),
@@ -2902,7 +2902,9 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1250, 0, 0, 'ես կամավոր էի', 'yes gamavor Aee', 'I was a volunteer', 'goth'),
 (1251, 0, 0, 'Ես խոսեցի կամավորի հետ', 'Yes h*osAtsee gamavoree hAt', 'I spoke to the volunteer', 'goog'),
 (1252, 0, 0, 'կամավորն օգնեց ինձ', 'gamavorn oagknAts eents', 'The volunteer helped me.', 'goog'),
-(1253, 0, 0, 'հաջորդ դասը', 'hadjort dasee', 'next lesson', 'goth');
+(1253, 0, 0, 'հաջորդ դասը', 'hadjort dasee', 'next lesson', 'goth'),
+(1254, 0, 0, 'դրա համար', 'dra hamar', 'for it', 'goth'),
+(1255, 0, 0, 'որոնք այստեղ են', 'voronk aystegh* yen', 'which are here', 'goth');
 
 -- --------------------------------------------------------
 
@@ -3138,7 +3140,7 @@ INSERT INTO `tbl_verbs` (`VID`, `VGRP`, `ARMSCRIPT`, `BAI`, `VERB`, `COMMANDINF`
 (83, 21, NULL, 'preentanAl', 'to print', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (84, 21, NULL, 'sarkAl', 'to make or to repair', 'sarkeer', 'sarkAk', 'sarkoomem', 'sarkAtsee', '', 'sarkoomAee', 'sarkAlooem', '', 'sarkAlooAee', 'sarkem', ''),
 (85, 5, NULL, 'sArmAl', 'to press', 'x', 'x', '', '', '', '', '', '', '', '', ''),
-(86, 15, NULL, 'seerAl', 'to like or to love', 'x', 'x', '', '', '', '', '', '', '', '', ''),
+(86, 15, 'սիրել', 'seerAl', 'to like or to love', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (87, 2, NULL, 'shirjzavAl', 'to turn around', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (88, 9, NULL, 'skusAl', 'to start', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (89, 16, NULL, 'sovorAl', 'to learn', 'x', 'x', '', '', '', '', '', '', '', '', ''),
@@ -3476,7 +3478,7 @@ ALTER TABLE `tbl_parts`
 -- AUTO_INCREMENT for table `tbl_phrases`
 --
 ALTER TABLE `tbl_phrases`
-  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1254;
+  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1256;
 
 --
 -- AUTO_INCREMENT for table `tbl_verbs`
