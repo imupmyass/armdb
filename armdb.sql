@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Mar 17, 2020 at 08:28 PM
+-- Generation Time: Mar 18, 2020 at 09:23 PM
 -- Server version: 8.0.19
 -- PHP Version: 7.4.1
 
@@ -1196,7 +1196,7 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (925, 100, NULL, 'kinopka', 'x', 'x', 'button', NULL),
 (926, 0, NULL, 'airoport (a-ee)', 'airoportnAr', 'airoportee', 'airport', 'r70'),
 (927, 0, NULL, 'oatakayan', 'oatakayannAr', 'oatakanyanee', 'airport (plane stop)', NULL),
-(928, 0, NULL, 'toms', 'tomsAr', 'tomsee', 'ticket', NULL),
+(928, 0, 'տոմս', 'toms', 'tomsAr', 'tomsee', 'ticket', NULL),
 (929, 0, NULL, 'tReechk', 'tReechknAr', 'tReechkee', 'flight', NULL),
 (930, 0, NULL, 'atsakan', '', '', 'adjective', NULL),
 (931, 0, NULL, 'darcheen', '', '', 'cinamon', NULL),
@@ -1375,7 +1375,8 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (1104, 0, 'կամավոր', 'gamavor', 'gamavorner', 'gamavorner', 'volunteer', NULL),
 (1105, 0, 'կրկես', 'kirkAs', '', '', 'circus', 'andr'),
 (1106, 19, 'աշխատանք', 'ashkhatank', 'x', 'x', 'work', ''),
-(1107, 0, 'ավազ', 'avaz', '', '', 'sand', 'goth');
+(1107, 0, 'ավազ', 'avaz', '', '', 'sand', 'goth'),
+(1108, 0, 'ալիք', 'aleek', '', '', 'channel', NULL);
 
 -- --------------------------------------------------------
 
@@ -1626,7 +1627,8 @@ INSERT INTO `tbl_parts` (`PID`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VA
 (71, 'այնտեղ', 'aint~der*??', 'there', NULL),
 (72, 'այստեղ', 'aist~der*??', 'here', NULL),
 (73, 'բավական', 'bavakan', 'enough', NULL),
-(74, 'սակայն', 'sakayn', 'however', 'goog');
+(74, 'սակայն', 'sakayn', 'however', 'goog'),
+(75, 'ինչ որ', 'eench vor', 'some', NULL);
 
 -- --------------------------------------------------------
 
@@ -2198,7 +2200,7 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (547, 29, 0, NULL, 'meenchAv ais dzimmer.', 'Before this winter.', NULL),
 (548, 2, 0, NULL, 'anooshkoom', 'Have a nice / good sleep.', NULL),
 (549, 25, 0, NULL, 'geerk cheeg~ka ser*anee vra.', 'There isn\'t a book on the table.', NULL),
-(550, 100, 0, NULL, 'vorter* marteek g~kan?', 'Where are the people?', NULL),
+(550, 100, 0, 'որտեղ մարդիկ կան??', 'vorter* marteek g~kan?', 'Where are the people?', NULL),
 (551, 100, 0, NULL, 'nirank aistAr* An', 'They\'re here.', NULL),
 (552, 25, 0, NULL, 'voatch mee geerk cheeg~ka.', 'There is no book.', NULL),
 (553, 6, 0, NULL, 'vortAr*A h*unzorih?', 'Where is the apple?', NULL),
@@ -3460,7 +3462,7 @@ ALTER TABLE `tbl_adj_groups`
 -- AUTO_INCREMENT for table `tbl_nouns`
 --
 ALTER TABLE `tbl_nouns`
-  MODIFY `NID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1108;
+  MODIFY `NID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1109;
 
 --
 -- AUTO_INCREMENT for table `tbl_numbers`
@@ -3472,7 +3474,7 @@ ALTER TABLE `tbl_numbers`
 -- AUTO_INCREMENT for table `tbl_parts`
 --
 ALTER TABLE `tbl_parts`
-  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `tbl_phrases`
