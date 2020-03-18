@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Mar 18, 2020 at 09:23 PM
+-- Generation Time: Mar 18, 2020 at 10:47 PM
 -- Server version: 8.0.19
 -- PHP Version: 7.4.1
 
@@ -1628,7 +1628,8 @@ INSERT INTO `tbl_parts` (`PID`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VA
 (72, 'այստեղ', 'aist~der*??', 'here', NULL),
 (73, 'բավական', 'bavakan', 'enough', NULL),
 (74, 'սակայն', 'sakayn', 'however', 'goog'),
-(75, 'ինչ որ', 'eench vor', 'some', NULL);
+(75, 'ինչ որ', 'eench vor', 'some', NULL),
+(76, 'ինչ որ բան', 'eench vor ban', 'something', NULL);
 
 -- --------------------------------------------------------
 
@@ -2586,7 +2587,7 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (932, 0, 0, NULL, 'yes meesht b~partivoomem yArp yes h*ah*oomem g~kart.', 'I always loose when I play cards.', NULL),
 (933, 0, 0, NULL, 'geejz martoo anoona narAg~kA.', 'The crazy man is called NarAg~k.', NULL),
 (934, 0, 0, NULL, 'cheest chee.', 'Not correct.', NULL),
-(935, 0, 0, NULL, 'yes amoosnatsatsem astreedee hAt.', 'I am married to Astrid.', NULL),
+(935, 0, 0, 'Ես ամուսնացած եմ Աստրիդի հետ', 'yes amoosnatsatsem astreedee hAt.', 'I am married to Astrid.', NULL),
 (936, 0, 0, NULL, 'mAnk dzanor*nArid Ank.', 'We are your parents.', NULL),
 (937, 0, 0, NULL, 'mAnk h*osoomAnk skaipov.', 'We speak on Skype.', NULL),
 (938, 0, 0, NULL, 'eenchA hairid anoom?', 'What does your father do?', NULL),
@@ -2906,7 +2907,13 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1252, 0, 0, 'կամավորն օգնեց ինձ', 'gamavorn oagknAts eents', 'The volunteer helped me.', 'goog'),
 (1253, 0, 0, 'հաջորդ դասը', 'hadjort dasee', 'next lesson', 'goth'),
 (1254, 0, 0, 'դրա համար', 'dra hamar', 'for it', 'goth'),
-(1255, 0, 0, 'որոնք այստեղ են', 'voronk aystegh* yen', 'which are here', 'goth');
+(1255, 0, 0, 'որոնք այստեղ են', 'voronk aystegh* yen', 'which are here', 'goth'),
+(1256, 0, 0, 'Ես ամուսնացած չեմ Աստրիդի հետ', 'Yes amoosnatsats chem Astridee hAt', 'I am not married to Astrid.', NULL),
+(1257, 0, 0, 'Ես չեմ ուզում ամուսնանալ Աստրիդի հետ', 'Yes chem uzum amusnanal Astridee hAt', 'I do not want to be married to Astrid.', NULL),
+(1258, 0, 0, 'Նա ամուսնացած է?', 'Na amusnatsats A?', 'Is she married?', 'goth'),
+(1259, 0, 0, 'Նա միայնակ է', 'Na mee-aynak e?', 'Is she single?', 'goth'),
+(1260, 0, 0, '(դու) սեքսուալ ես', '(doo) sek’sual yAs', 'you are sexy', 'goth'),
+(1261, 0, 0, 'ցանկալի ես', '', 'you are desirable ', 'goth');
 
 -- --------------------------------------------------------
 
@@ -3226,7 +3233,7 @@ INSERT INTO `tbl_verbs` (`VID`, `VGRP`, `ARMSCRIPT`, `BAI`, `VERB`, `COMMANDINF`
 (167, 0, NULL, 'kapAl', 'to tie', '', '', '', '', '', '', '', '', '', '', ''),
 (168, 0, NULL, 'tseetsah*Al', 'to be funny', '', '', '', '', '', '', '', '', '', '', ''),
 (169, 0, NULL, 'ginAl', 'to buy', 'gineer', 'ginAk', 'ginoomem (see ginal**)', 'ginAtsee', 'ginAlem', 'ginoomAee (see ginal**)', 'ginAlooem', '', 'ginAlooAee', 'ginem', 'form'),
-(170, 0, NULL, 'amoosnanal', 'to marry', '', '', '', '', '', '', '', '', '', '', ''),
+(170, 0, 'ամուսնանալ', 'amoosnanal', 'to marry', '', '', '', '', '', '', '', '', '', '', ''),
 (171, 0, NULL, 'bartivAl', 'to lose', '', '', '', '', '', '', '', '', '', '', ''),
 (172, 0, NULL, 'bartsnAl', 'to finish', '', '', '', '', '', '', '', '', '', '', 'inf'),
 (173, 0, NULL, 'taksnAl', 'to hide (not ones self)', 'taksroo', 'taksrAk', 'taksnoomem', 'taksrAtsee', 'taksrAlem', 'taksnoomAee', 'taksnAlooem', '', 'taksnAlooAee', 'taksnem', ''),
@@ -3474,13 +3481,13 @@ ALTER TABLE `tbl_numbers`
 -- AUTO_INCREMENT for table `tbl_parts`
 --
 ALTER TABLE `tbl_parts`
-  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `tbl_phrases`
 --
 ALTER TABLE `tbl_phrases`
-  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1256;
+  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1262;
 
 --
 -- AUTO_INCREMENT for table `tbl_verbs`
