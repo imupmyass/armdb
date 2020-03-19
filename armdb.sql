@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Mar 18, 2020 at 10:47 PM
+-- Generation Time: Mar 19, 2020 at 08:15 PM
 -- Server version: 8.0.19
 -- PHP Version: 7.4.1
 
@@ -110,7 +110,7 @@ INSERT INTO `tbl_adjectives` (`AID`, `AGRP`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`,
 (66, 0, NULL, 'tseetsah*Alee', 'funny', NULL),
 (67, 0, NULL, 'oojzeh*', 'strong', NULL),
 (68, 0, NULL, 'gAr*tot', 'dirty', NULL),
-(69, 0, NULL, 'mAnak', 'alone', NULL),
+(69, 0, 'մենակ', 'mAnak', 'alone', NULL),
 (70, 0, NULL, 'nor', 'new', NULL),
 (71, 0, NULL, 'narinjagween', 'orange', NULL),
 (72, 0, NULL, 'moh*ragween', 'grey', NULL),
@@ -845,7 +845,7 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (575, 14, NULL, 'gordsAloo mAkana', 'x', 'x', 'knitting machine', NULL),
 (576, 14, NULL, 'poshAkool', 'x', 'x', 'hoover', NULL),
 (577, 14, NULL, 'oRorots', 'x', 'x', 'cradle', NULL),
-(578, 14, NULL, 'barts', 'x', 'x', 'pillow', NULL),
+(578, 14, 'բարձ', 'barts', 'x', 'x', 'pillow', NULL),
 (579, 14, NULL, 'atoR', 'x', 'x', 'chair', NULL),
 (580, 14, NULL, 'seh*an', 'x', 'x', 'table', NULL),
 (581, 14, NULL, 'dashnamoor', 'x', 'x', 'piano', NULL),
@@ -883,7 +883,7 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (613, 16, NULL, 'ingAroohe', 'x', 'x', 'friend (female)', NULL),
 (614, 16, NULL, 'dih*a', 'x', 'x', 'son /boy', NULL),
 (615, 100, NULL, 'mangootsoon', 'x', 'mangootsyan', 'childhood', NULL),
-(616, 16, NULL, 'indaneek', 'x', 'x', 'family', NULL),
+(616, 16, 'ընտանիք', 'indaneek', 'x', 'x', 'family', NULL),
 (617, 16, NULL, 'vortee', 'x', 'x', 'son', NULL),
 (618, 16, NULL, 'haiAr', 'x', 'x', 'father', NULL),
 (619, 16, NULL, 'haiAreek', 'x', 'x', 'daddy', NULL),
@@ -1376,7 +1376,8 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (1105, 0, 'կրկես', 'kirkAs', '', '', 'circus', 'andr'),
 (1106, 19, 'աշխատանք', 'ashkhatank', 'x', 'x', 'work', ''),
 (1107, 0, 'ավազ', 'avaz', '', '', 'sand', 'goth'),
-(1108, 0, 'ալիք', 'aleek', '', '', 'channel', NULL);
+(1108, 0, 'ալիք', 'aleek', '', '', 'channel', NULL),
+(1109, 0, 'մենյու', 'mAnyoo', '', '', 'menu', NULL);
 
 -- --------------------------------------------------------
 
@@ -2242,7 +2243,7 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (588, 5, 0, NULL, 'h*atchmArookeets tsar.', 'From the junction, left.', NULL),
 (589, 6, 0, NULL, 'yes aRa hats h*anooteets', 'I bought bread from the shop.', NULL),
 (590, 6, 0, NULL, 'yes aRa sa harrodseets / sas', 'I bought this from Harrods / SAS.', NULL),
-(591, 5, 0, NULL, 'yes galeesem shotlandiaeets.', 'I come from Scotland.', NULL),
+(591, 5, 0, 'Ես գալիս եմ Սկոտլանդիայից', 'yes galeesem shotlandiaeets.', 'I come from Scotland.', NULL),
 (592, 5, 0, NULL, 'vorter*eets As galees?', 'Where do you come from?', NULL),
 (593, 5, 0, NULL, 'viraastan eets', 'From Georgia.', NULL),
 (594, 100, 0, NULL, 'vortAr*eets A sa?', 'Where is this from?', NULL),
@@ -2372,9 +2373,9 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (718, 0, 0, NULL, 'antseeyal jzamanak', 'past tense (grammar)', NULL),
 (719, 0, 0, NULL, 'yes h*osoomem gapeekee pAs', 'I speak like a monkey', 'inf'),
 (720, 0, 0, NULL, 'eench pAs meesht', 'like / as always', NULL),
-(721, 0, 0, NULL, 'Al cheeka moanstirnAr (hirAshnAr)', 'No more monsters.', 'r(a'),
-(722, 0, 0, NULL, 'sovorobar eents doorA galees tiRnAl bayts yArpAmin chA.', 'Usually I like to fly but sometimes I don\'t.', NULL);
+(721, 0, 0, NULL, 'Al cheeka moanstirnAr (hirAshnAr)', 'No more monsters.', 'r(a');
 INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`, `SOURCE`) VALUES
+(722, 0, 0, NULL, 'sovorobar eents doorA galees tiRnAl bayts yArpAmin chA.', 'Usually I like to fly but sometimes I don\'t.', NULL),
 (723, 0, 0, NULL, 'yes vah*analoo moanstir / hirAsh em.', 'I am a scarey monster.', NULL),
 (724, 0, 0, NULL, 'ca vah*analoo shoon A', 'Thats a scarey dog.', NULL),
 (725, 0, 0, NULL, 'oarinak (oarinakee hamar)', 'for example', NULL),
@@ -2823,7 +2824,7 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1168, 0, 1, NULL, 'voatch, speetak.', 'No white.', NULL),
 (1169, 0, 1, NULL, 'doo nastAlAs dzee?', 'You\'ve been on a horse?', NULL),
 (1170, 0, 1, NULL, 'mAk ancam, baits chem kshAl.', 'I\'ve been one once, but I didn\'t ride it.', NULL),
-(1171, 0, 1, NULL, 'schotlandiayoom, amen daree shat marteek kshoomAn dzeeAr eem gyooh*ee shoorjih. girAtA chors haryoor mart.', 'In Scotland every year a lot of people ride around my town. Almost 400 people.', NULL),
+(1171, 0, 1, '...գրեթե 400 մարդ.', 'schotlandiayoom, amen daree shat marteek kshoomAn dzeeAr eem gyooh*ee shoorjih. girAtA chors haryoor mart.', 'In Scotland every year a lot of people ride around my town. Almost 400 people.', NULL),
 (1172, 0, 1, NULL, 'oozoomAs disnAl nikar?', 'You want to see a photo?', NULL),
 (1173, 0, 1, NULL, 'ayo.', 'Yes.', NULL),
 (1174, 0, 1, NULL, 'heenk haryoor daree sharoonak marteeg~k amen daree nishoomAn ais ora.', 'For 500 years people celebrate this day.', NULL),
@@ -2913,7 +2914,12 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1258, 0, 0, 'Նա ամուսնացած է?', 'Na amusnatsats A?', 'Is she married?', 'goth'),
 (1259, 0, 0, 'Նա միայնակ է', 'Na mee-aynak e?', 'Is she single?', 'goth'),
 (1260, 0, 0, '(դու) սեքսուալ ես', '(doo) sek’sual yAs', 'you are sexy', 'goth'),
-(1261, 0, 0, 'ցանկալի ես', '', 'you are desirable ', 'goth');
+(1261, 0, 0, 'ցանկալի ես', '', 'you are desirable ', 'goth'),
+(1262, 0, 0, 'բարձ կարելի՞է ', 'bards karAle A?', 'May I have a pillow?', 'peac'),
+(1263, 0, 0, 'ընտանիքս ապրում է Շոտլանդիայում', 'indaneekis abproomA Shotlandiaoom', 'My family lives in Scotland.', 'goth'),
+(1264, 0, 0, 'մենյուն կարելի՞է', 'mAnyoo karAleeA', '(Can) May I have the menu (please)?', 'peac'),
+(1265, 0, 0, 'Մի հարց կարելի՞է?', 'mee harts karAleeA?', 'May I ask a question?', 'peac'),
+(1266, 0, 0, 'չի կարելի', 'chee karAlee', 'Don\'t do it/thats not allowed', NULL);
 
 -- --------------------------------------------------------
 
@@ -3162,7 +3168,7 @@ INSERT INTO `tbl_verbs` (`VID`, `VGRP`, `ARMSCRIPT`, `BAI`, `VERB`, `COMMANDINF`
 (96, 12, NULL, 'vArtsnAl', 'to take', 'vArtsroo', 'vArtsrAk', 'vArtsnoomem', 'vArtsrAtsee', '', 'vArtsnoomAee', 'vArtsnAlooem', '', 'vArtsnAlooAee', 'vArtsnAm', ''),
 (97, 2, NULL, 'vazAl', 'to run', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (98, 14, NULL, 'yArkAl', 'to sing', 'x', 'x', '', '', '', '', '', '', '', '', ''),
-(99, 14, NULL, 'zangAl', 'to call', 'x', 'x', '', '', '', '', '', '', '', '', ''),
+(99, 14, 'զանգել', 'zangAl', 'to call', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (100, 8, NULL, 'zgal', 'to feel', 'zga', 'zgatsAk', 'zgoomem', 'zgatsee', 'zgatsAlem', 'zgoomAee', 'zgalooem', '', 'zgalooAee', 'zgam', ''),
 (101, 17, 'Գրել', 'girAl', 'to write', 'x', 'x', '', '', '', '', '', '', '', '', ''),
 (102, 17, 'Կարդալ', 'k~gartal', 'to read', 'x', 'x', '', '', '', '', '', '', '', '', ''),
@@ -3271,7 +3277,9 @@ INSERT INTO `tbl_verbs` (`VID`, `VGRP`, `ARMSCRIPT`, `BAI`, `VERB`, `COMMANDINF`
 (205, 0, NULL, 'tih*Al', 'to bake', '', '', '', '', '', '', '', '', '', '', ''),
 (206, 0, NULL, 'h*iratsnAl', 'to snore', '', '', '', '', '', '', '', '', '', '', ''),
 (207, 0, NULL, 'eenkalAl', 'to hear', '', '', '', '', '', '', '', '', '', '', ''),
-(208, 0, 'Խմել', 'h*mAl', 'to drink', 'h*meer', 'h*mAk', '', 'h*mAtsee', '', '', 'k\'h*mem', '', '', '', 'frfr');
+(208, 0, 'Խմել', 'h*mAl', 'to drink', 'h*meer', 'h*mAk', '', 'h*mAtsee', '', '', 'k\'h*mem', '', '', '', 'frfr'),
+(209, 0, 'մտնել', 'mitnAl', 'to enter', '', '', '', '', '', '', '', '', '', '', ''),
+(210, 0, 'մենակ լինել', 'mAnak leenAl', 'to be alone', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -3469,7 +3477,7 @@ ALTER TABLE `tbl_adj_groups`
 -- AUTO_INCREMENT for table `tbl_nouns`
 --
 ALTER TABLE `tbl_nouns`
-  MODIFY `NID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1109;
+  MODIFY `NID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1110;
 
 --
 -- AUTO_INCREMENT for table `tbl_numbers`
@@ -3487,13 +3495,13 @@ ALTER TABLE `tbl_parts`
 -- AUTO_INCREMENT for table `tbl_phrases`
 --
 ALTER TABLE `tbl_phrases`
-  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1262;
+  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1267;
 
 --
 -- AUTO_INCREMENT for table `tbl_verbs`
 --
 ALTER TABLE `tbl_verbs`
-  MODIFY `VID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
+  MODIFY `VID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
