@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Mar 19, 2020 at 08:15 PM
+-- Generation Time: Mar 20, 2020 at 04:06 PM
 -- Server version: 8.0.19
 -- PHP Version: 7.4.1
 
@@ -34,7 +34,7 @@ CREATE TABLE `tbl_adjectives` (
   `ARMSCRIPT` varchar(64) CHARACTER SET armscii8 COLLATE armscii8_general_ci DEFAULT NULL COMMENT 'Should be Armenian letters',
   `ARMENIAN` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `ENGLISH` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `SOURCE` char(3) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL
+  `SOURCE` char(4) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
@@ -179,7 +179,8 @@ INSERT INTO `tbl_adjectives` (`AID`, `AGRP`, `ARMSCRIPT`, `ARMENIAN`, `ENGLISH`,
 (135, 0, NULL, 'chah*', 'fat', NULL),
 (136, 0, NULL, 'sheerah', 'sticky', 'inf'),
 (137, 0, NULL, 'g~kipinoomA', 'sticky', 'for'),
-(138, 2, 'հիանալի', 'hianalee', 'fine', NULL);
+(138, 2, 'հիանալի', 'hianalee', 'fine', NULL),
+(139, 0, 'ձանձրալի', 'dzandzralee', 'boring', 'goth');
 
 -- --------------------------------------------------------
 
@@ -1377,7 +1378,9 @@ INSERT INTO `tbl_nouns` (`NID`, `NGRP`, `ARMSCRIPT`, `NOMINATIVE`, `PLURAL`, `PO
 (1106, 19, 'աշխատանք', 'ashkhatank', 'x', 'x', 'work', ''),
 (1107, 0, 'ավազ', 'avaz', '', '', 'sand', 'goth'),
 (1108, 0, 'ալիք', 'aleek', '', '', 'channel', NULL),
-(1109, 0, 'մենյու', 'mAnyoo', '', '', 'menu', NULL);
+(1109, 0, 'մենյու', 'mAnyoo', '', '', 'menu', NULL),
+(1110, 0, 'մաս', 'mas', 'masAr', 'masee', 'part/piece', 'goth'),
+(1111, 0, 'նախադասություն', 'nah*adasootyoon', '', '', 'sentence', NULL);
 
 -- --------------------------------------------------------
 
@@ -2919,7 +2922,10 @@ INSERT INTO `tbl_phrases` (`PID`, `PGRP`, `CONVID`, `ARMSCRIPT`, `ARMENIAN`, `EN
 (1263, 0, 0, 'ընտանիքս ապրում է Շոտլանդիայում', 'indaneekis abproomA Shotlandiaoom', 'My family lives in Scotland.', 'goth'),
 (1264, 0, 0, 'մենյուն կարելի՞է', 'mAnyoo karAleeA', '(Can) May I have the menu (please)?', 'peac'),
 (1265, 0, 0, 'Մի հարց կարելի՞է?', 'mee harts karAleeA?', 'May I ask a question?', 'peac'),
-(1266, 0, 0, 'չի կարելի', 'chee karAlee', 'Don\'t do it/thats not allowed', NULL);
+(1266, 0, 0, 'չի կարելի', 'chee karAlee', 'Don\'t do it/thats not allowed', NULL),
+(1267, 0, 0, 'ես խոսում եմ լեզուն', 'yes h*osoomem lAzoon', 'i speak the langage', 'goth'),
+(1268, 0, 0, 'Այդ ինչ տարօրինակ լեզու է', 'ayd eench dtaroreenak lAzoo e', 'What a strange language!', 'goth'),
+(1269, 0, 0, 'դա երկար նախադասություն է', 'da yArkar nah*adasootyoon e', 'That\'s a long sentence.', 'goth');
 
 -- --------------------------------------------------------
 
@@ -3465,7 +3471,7 @@ ALTER TABLE `tbl_verbs`
 -- AUTO_INCREMENT for table `tbl_adjectives`
 --
 ALTER TABLE `tbl_adjectives`
-  MODIFY `AID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `AID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 
 --
 -- AUTO_INCREMENT for table `tbl_adj_groups`
@@ -3477,7 +3483,7 @@ ALTER TABLE `tbl_adj_groups`
 -- AUTO_INCREMENT for table `tbl_nouns`
 --
 ALTER TABLE `tbl_nouns`
-  MODIFY `NID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1110;
+  MODIFY `NID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1112;
 
 --
 -- AUTO_INCREMENT for table `tbl_numbers`
@@ -3495,7 +3501,7 @@ ALTER TABLE `tbl_parts`
 -- AUTO_INCREMENT for table `tbl_phrases`
 --
 ALTER TABLE `tbl_phrases`
-  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1267;
+  MODIFY `PID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1270;
 
 --
 -- AUTO_INCREMENT for table `tbl_verbs`
