@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: mysql:3306
--- Generation Time: Mar 20, 2020 at 04:06 PM
--- Server version: 8.0.19
--- PHP Version: 7.4.1
+-- Host: database-2.cxkmeeym5fn4.eu-west-1.rds.amazonaws.com:3306
+-- Generation Time: Jul 26, 2020 at 08:38 PM
+-- Server version: 8.0.20
+-- PHP Version: 7.3.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -220,6 +220,7 @@ INSERT INTO `tbl_adj_groups` (`GID`, `GNAME`) VALUES
 --
 
 CREATE TABLE `tbl_countries` (
+  `CID` int NOT NULL,
   `COUNTRY` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `NATIONALITY` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `LANGUAGE` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
@@ -231,27 +232,27 @@ CREATE TABLE `tbl_countries` (
 -- Dumping data for table `tbl_countries`
 --
 
-INSERT INTO `tbl_countries` (`COUNTRY`, `NATIONALITY`, `LANGUAGE`, `OBJECT`, `CAPITAL`) VALUES
-('haistan', 'hai', 'hai-ArAn', 'haikakan', 'yArivan'),
-('roosastan', 'roos', 'roosArAn', 'roosakan', 'moskivah'),
-('anglia', 'angliatsee', 'anglArAn', 'angliakan', 'london (not lundin)'),
-('shotlandia', 'shotlandatsee', 'anglArAn', 'shotlandakan', 'edinboorg'),
-('veeraastan', 'veeratsee', 'veeratsArAn', 'veeratsakan', 'tibileesee'),
-('eeran', 'eeranatsee', 'eeranArAn', 'eeranakan', 'tAran'),
-('toorkia', 'toork', 'toorkArAn', 'toorkakan', 'ankara/stanbool'),
-('fransia', 'fransiatsee', 'fransArAn', 'fransiakan', 'parees'),
-('germania', 'germanatsee', 'germanArAn', 'germanakan', 'berleen'),
-('ookraeena', 'ookrainatsee', 'ookrainArAn', 'ookrainakan', 'kee\'ev'),
-('aderbAjan', 'aderbAjanatsee', 'aderbAjanArAn', 'adArbAjanAkan', 'bakoo'),
-('amArica', 'amAricatsee', 'anglArAn', 'amArikakan', 'vashington'),
-('h*arabah*', 'h*arabah*see', 'hyrAn', 'h*arabah*ee', 'artsah*'),
-('eetalia', 'eetalatsee', 'eetalArAn', 'eetalakan', 'hirom'),
-('eespania', 'eespanatsa', 'eespanArAn', 'eespanakan', 'madreed'),
-('cheenastan', 'cheenastee', 'cheenArAn', 'cheenakan', 'bpAkeen'),
-('japoania', 'japoanatsee', 'japonArAn', 'japonkan', 'tokyo'),
-('breetania', 'breetanatsee', 'anglArAn', 'breetanakan', 'london'),
-('hundkastan', 'hundeek', 'hundkArAn', 'hundkakan', 'moombai'),
-('', '', 'arabArAn', '', '');
+INSERT INTO `tbl_countries` (`CID`, `COUNTRY`, `NATIONALITY`, `LANGUAGE`, `OBJECT`, `CAPITAL`) VALUES
+(1, 'haistan', 'hai', 'hai-ArAn', 'haikakan', 'yArivan'),
+(2, 'roosastan', 'roos', 'roosArAn', 'roosakan', 'moskivah'),
+(3, 'anglia', 'angliatsee', 'anglArAn', 'angliakan', 'london (not lundin)'),
+(4, 'shotlandia', 'shotlandatsee', 'anglArAn', 'shotlandakan', 'edinboorg'),
+(5, 'veeraastan', 'veeratsee', 'veeratsArAn', 'veeratsakan', 'tibileesee'),
+(6, 'eeran', 'eeranatsee', 'eeranArAn', 'eeranakan', 'tAran'),
+(7, 'toorkia', 'toork', 'toorkArAn', 'toorkakan', 'ankara/stanbool'),
+(8, 'fransia', 'fransiatsee', 'fransArAn', 'fransiakan', 'parees'),
+(9, 'germania', 'germanatsee', 'germanArAn', 'germanakan', 'berleen'),
+(10, 'ookraeena', 'ookrainatsee', 'ookrainArAn', 'ookrainakan', 'kee\'ev'),
+(11, 'aderbAjan', 'aderbAjanatsee', 'aderbAjanArAn', 'adArbAjanAkan', 'bakoo'),
+(12, 'amArica', 'amAricatsee', 'anglArAn', 'amArikakan', 'vashington'),
+(13, 'h*arabah*', 'h*arabah*see', 'hyrAn', 'h*arabah*ee', 'artsah*'),
+(14, 'eetalia', 'eetalatsee', 'eetalArAn', 'eetalakan', 'hirom'),
+(15, 'eespania', 'eespanatsa', 'eespanArAn', 'eespanakan', 'madreed'),
+(16, 'cheenastan', 'cheenastee', 'cheenArAn', 'cheenakan', 'bpAkeen'),
+(17, 'japoania', 'japoanatsee', 'japonArAn', 'japonkan', 'tokyo'),
+(18, 'breetania', 'breetanatsee', 'anglArAn', 'breetanakan', 'london'),
+(19, 'hundkastan', 'hundeek', 'hundkArAn', 'hundkakan', 'moombai'),
+(20, '', '', 'arabArAn', '', '');
 
 -- --------------------------------------------------------
 
@@ -3434,6 +3435,12 @@ ALTER TABLE `tbl_adj_groups`
   ADD PRIMARY KEY (`GID`);
 
 --
+-- Indexes for table `tbl_countries`
+--
+ALTER TABLE `tbl_countries`
+  ADD PRIMARY KEY (`CID`);
+
+--
 -- Indexes for table `tbl_nouns`
 --
 ALTER TABLE `tbl_nouns`
@@ -3484,6 +3491,12 @@ ALTER TABLE `tbl_adjectives`
 --
 ALTER TABLE `tbl_adj_groups`
   MODIFY `GID` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `tbl_countries`
+--
+ALTER TABLE `tbl_countries`
+  MODIFY `CID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tbl_nouns`
