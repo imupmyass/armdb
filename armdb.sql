@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: database-2.cxkmeeym5fn4.eu-west-1.rds.amazonaws.com:3306
--- Generation Time: Jul 26, 2020 at 08:38 PM
+-- Generation Time: Jul 26, 2020 at 09:02 PM
 -- Server version: 8.0.20
 -- PHP Version: 7.3.20
 
@@ -3474,7 +3474,8 @@ ALTER TABLE `tbl_phr_groups`
 -- Indexes for table `tbl_verbs`
 --
 ALTER TABLE `tbl_verbs`
-  ADD PRIMARY KEY (`VID`);
+  ADD PRIMARY KEY (`VID`),
+  ADD KEY `idx_armverb` (`BAI`);
 
 --
 -- AUTO_INCREMENT for dumped tables
